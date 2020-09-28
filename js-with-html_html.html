@@ -55,23 +55,23 @@
 	</ul>
 </div>
 
-<script>
-	/* **************************************
-		      THIS IS AN INLINE EXAMPLE
-	 ****************************************/
+<!--<script>-->
+<!--	/* **************************************-->
+<!--		      THIS IS AN INLINE EXAMPLE-->
+<!--	 ****************************************/-->
 
-	// Your javascript code goes in this script tag!
+<!--	// Your javascript code goes in this script tag!-->
 
-	//TODO: Console.log "Hello from inline javascript"
+<!--	//TODO: Console.log "Hello from inline javascript"-->
 
-	console.log("Hello from inline javascript");
-	console.log("This is a message");
+<!--	console.log("Hello from inline javascript");-->
+<!--	console.log("This is a message");-->
 
-</script>
+<!--</script>-->
 
 <!--TODO: ADD EXTERNAL JS-->
 
-<script src="js/external-js-lec.js"></script>
+<!--<script src="js/external-js-lec.js"></script>-->
 
 <script>
 	// This is for the user interactions
@@ -94,8 +94,9 @@
 
 	//TODO TOGETHER: Write a confirm interaction and console.log the result
 
-	let confirmed = confirm('Are you sure you want to click "OK"?');
+ 	let confirmed = confirm('Are you sure you want to click "OK"?');
 	console.log(confirmed);
+	alert('User selected: ' + confirmed);
 
 	// TODO: Select the OK option. View the result. Select the cancel option. View the result.
 
@@ -107,6 +108,7 @@
 
 	let userInput = prompt('Please type something: ');
 	console.log('User entered: ' + userInput);
+	alert('User typed: ' + userInput)
 
 	// TODO: Write an additional prompt. Console.log the result
 
