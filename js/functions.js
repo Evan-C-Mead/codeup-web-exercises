@@ -10,7 +10,7 @@
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
 
-    function sayHello(name) {
+    function sayHello() {
         var username = 'Evan';
         return 'Hello, ' + username + '!';
     }
@@ -89,7 +89,7 @@
     var tip = Number.parseFloat(prompt('Enter the percentage you would like to tip: '));
     var bill = Number.parseFloat(prompt('Enter the bill total: '));
 
-    alert(calculatedTip(tip, bill));
+    alert('Amount to tip is: $' + calculatedTip(tip, bill));
 
     /**
      * TODO:
@@ -114,5 +114,5 @@
     var discount = Number.parseFloat(prompt('Enter discount percentage: '));
     var orignailPrice = Number.parseFloat(prompt('Enter original price: '));
 
-    alert(applyDiscount(discount, orignailPrice));
+    alert('Discounted price is: $' + applyDiscount(discount, orignailPrice));
 })();
