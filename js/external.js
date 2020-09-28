@@ -56,3 +56,15 @@ function studentEnrolled() {
 }
 alert('User is enrolled in class: ' + studentEnrolled());
 
+// var classIsNotFull = confirm("'Class is not full.");
+// var classScheduleDoesNotConflict = confirm('Schedule does noy conflict');
+// var enrolled = classIsNotFull && classScheduleDoesNotConflict;
+// var alertMessage = "Student enrolled: " + enrolled;
+// alert(alertMessage);
+// THIS IS ANOTHER WAY TO COMPLETE THE ABOVE TASK AS WELL!!
+
+var numberOfItems = Number(prompt('How many items for checkout?'));
+var offerValid = confirm('Is the offer valid?');
+var isPremiumMember = confirm('Are you a premium member?');
+var discountApplied = offerValid && (isPremiumMember || numberOfItems > 2);
+alert('Product discount: ' + discountApplied);
