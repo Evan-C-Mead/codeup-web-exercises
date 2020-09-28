@@ -30,7 +30,7 @@ var daysWorkedFacebook = prompt('How many days did you work at Facebook this wee
 alert('You worked ' + daysWorkedFacebook + ' days at Facebook this week.');
 var facebookPay = prompt('How much do you get paid per hour at Facebook?');
 alert('You get paid ' + facebookPay + ' per hour at Facebook.')
-var facebookTotal = daysWorkedFacebook* facebookPayPay;
+var facebookTotal = daysWorkedFacebook* facebookPay;
 alert('Your total from Facebook this week is ' + facebookTotal);
 var daysWorkedGoogle = prompt('How many days did you work at Google this week?');
 alert('You worked ' + daysWorkedGoogle + ' days at Google this week.');
@@ -42,3 +42,18 @@ var totalWeeklyPay = amazonTotal + facebookTotal + googleTotal;
 alert('Your total weekly pay is ' + totalWeeklyPay + ' .');
 
 alert('You can only join this class if it is not full and you have space in your schedule for it.');
+var classConfirm = confirm('Is this class available?');
+console.log(classConfirm);
+alert('User class is available: ' + classConfirm);
+var studentAvailability = confirm('Do you have an opening in your schedule?');
+console.log(studentAvailability);
+alert('User has opening in schedule for class: ' + studentAvailability);
+function studentEnrolled() {
+    if(classConfirm && studentAvailability === true){
+        return true;
+    } else{
+        return false;
+    }
+}
+alert('User is enrolled in class: ' + studentEnrolled());
+
