@@ -88,8 +88,9 @@
 
     var tip = Number.parseFloat(prompt('Enter the percentage you would like to tip: '));
     var bill = Number.parseFloat(prompt('Enter the bill total: '));
+    var tipPercentage = tip/100;
 
-    alert('Amount to tip is: $' + calculatedTip(tip, bill));
+    alert('Amount to tip is: $' + calculatedTip(tipPercentage, bill).toFixed(2));
 
     /**
      * TODO:
@@ -113,6 +114,7 @@
 
     var discount = Number.parseFloat(prompt('Enter discount percentage: '));
     var orignailPrice = Number.parseFloat(prompt('Enter original price: '));
+    var discountPercentage = discount/100;
 
-    alert('Discounted price is: $' + applyDiscount(discount, orignailPrice));
+    alert('Discounted price is: $' + applyDiscount(discountPercentage, orignailPrice));
 })();
