@@ -185,6 +185,8 @@ console.log(calculateTool(8,100));
 var userConfirm = confirm("Would you like to enter a number?");
 if(userConfirm === true) {
     var userNumber = Number.parseFloat(prompt("Enter your number: "));
+    alert(userNumber + 100);
+    alert(Math.sign(userNumber));
     if(userNumber % 2 === 0){
         return alert("Your number is even.");
     } else {
