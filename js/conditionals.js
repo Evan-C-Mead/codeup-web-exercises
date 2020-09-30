@@ -33,10 +33,10 @@ function analyzeColor(color) {
     }
 }
 
-    console.log(analyzeColor("blue"));
-    console.log(analyzeColor("red"));
-    console.log(analyzeColor("cyan"));
-    console.log(analyzeColor("pink"));
+console.log(analyzeColor("blue"));
+console.log(analyzeColor("red"));
+console.log(analyzeColor("cyan"));
+console.log(analyzeColor("pink"));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -45,13 +45,14 @@ function analyzeColor(color) {
 //                  will contain a different color every time the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
-    console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -74,7 +75,6 @@ switch (color) {
         alert("Not a color I recognize.");
         break
 }
-
 
 /**
  * TODO:
@@ -108,6 +108,32 @@ alert("You picked the color " + userColor + ". " + analyzeColor(userColor));
  * return value.
  */
 
+function calculateTool (luckyNumber, totalAmount) {
+    if(luckyNumber === 0 && totalAmount === 100){
+        return 100;
+    } else if(luckyNumber === 1 && totalAmount === 100) {
+        return 90;
+    } else if(luckyNumber === 2 && totalAmount === 100) {
+        return 75;
+    } else if(luckyNumber === 3 && totalAmount === 100) {
+        return 65;
+    } else if(luckyNumber === 4 && totalAmount === 100) {
+        return 50;
+    } else if(luckyNumber === 5 && totalAmount === 100) {
+        return 0;
+    } else {
+        return "not a valid lucky number..."
+    }
+}
+
+console.log(calculateTool(0,100));
+console.log(calculateTool(1,100));
+console.log(calculateTool(2,100));
+console.log(calculateTool(3,100));
+console.log(calculateTool(4,100));
+console.log(calculateTool(5,100));
+console.log(calculateTool(8,100));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -116,7 +142,28 @@ alert("You picked the color " + userColor + ". " + analyzeColor(userColor));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
+
+// function calculateTool (luckyNumber, totalAmount) {
+//     if(luckyNumber === 0 && totalAmount === userInput){
+//         return 100;
+//     } else if(luckyNumber === 1 && totalAmount === userInput) {
+//         return 90;
+//     } else if(luckyNumber === 2 && totalAmount === userInput) {
+//         return 75;
+//     } else if(luckyNumber === 3 && totalAmount === userInput) {
+//         return 65;
+//     } else if(luckyNumber === 4 && totalAmount === userInput) {
+//         return 50;
+//     } else if(luckyNumber === 5 && totalAmount === userInput) {
+//         return 0;
+//     } else {
+//         return "not a valid lucky number..."
+//     }
+// }
+//
 // var luckyNumber = Math.floor(Math.random() * 6);
+// var userInput = prompt("Enter your total bill: ");
+// alert("Your lucky number was " + luckyNumber + "." + " Your price before discount was " + userInput + "." + " Your price after the lucky number discount is " + calculateTool(luckyNumber, userInput));
 
 /**
  * TODO:
@@ -134,4 +181,17 @@ alert("You picked the color " + userColor + ". " + analyzeColor(userColor));
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+var userConfirm = confirm("Would you like to enter a number?");
+if(userConfirm === true) {
+    var userNumber = Number.parseFloat(prompt("Enter your number: "));
+    if(userNumber % 2 === 0){
+        return alert("Your number is even.");
+    } else {
+        return alert("Your number is odd.");
+    }
+}
+
+
+
 })();
