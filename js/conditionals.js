@@ -193,5 +193,4 @@ if(userConfirm === true) {
         return alert("Your number is odd.");
     }
 }
-
 })();
