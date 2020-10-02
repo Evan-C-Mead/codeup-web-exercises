@@ -170,7 +170,7 @@
 //  If divisible by 3 and 5, log "FizzBuzz"
 //  All other cases, just log the number.
 
-for (var i = 1; i < 101; i++) {
+for (var i = 1; i <= 100; i++) {
     if (i % 5 == 0 && i % 3 == 0) console.log("FizzBuzz");
     else if (i % 3 == 0) console.log("Fizz");
     else if (i % 5 == 0) console.log("Buzz");
