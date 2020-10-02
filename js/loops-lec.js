@@ -55,11 +55,11 @@
 
 //TODO: Create a while loop that asks the user to confirm: "Would you like to exit?"
 
-var myQuestion;
-
-while(!myQuestion) {
-    myQuestion = confirm("Would you like to exit?");
-}
+// var myQuestion;
+//
+// while(!myQuestion) {
+//     myQuestion = confirm("Would you like to exit?");
+// }
 
 /*********************************************
  *               DO-WHILE LOOPS
@@ -84,15 +84,33 @@ while(!myQuestion) {
 
 // TODO TOGETHER: Refactor the example above using a do-while loop. What behavior do we notice?
 
+// var i = 0;
+// do {
+//     console.log(i);
+//     i++;
+// } while (i < 10)
 
 //TODO TOGETHER: Create a do-while loop that asks the user to confirm: "Would you like to exit?" What difference do you notice?
+
+// do{
+//     var myOtherQuestion = confirm("Would you like to exit?");
+// }while (!myOtherQuestion);
 
 //TODO TOGETHER: Create a do-while loop that counts up to 20 (inclusive) by 2s (0, 2, 4...)
 // (0, 2, 4...20)
 
+// var i = 0;
+// do {
+//     console.log(i);
+//     i+=2;
+// } while (i <= 20);
 
 //TODO: Create a do-while loop that prompts the user for a color and continues to prompt until the string passed is "blue"
 
+do {
+    var color = prompt("What is the magic color?")
+} while (color !== "blue");
+alert("Blue IS the magic color!");
 
 /*********************************************
  *               FOR LOOPS
