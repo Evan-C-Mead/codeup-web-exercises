@@ -19,21 +19,21 @@
     // }
 
 
-    // var i;
-    // var j;
-    // for(i=1; i<=9; i++)
-    // {
-    //     for(j=1; j<=i; j++) {
-    //         console.log(i);
-    //     }
-    // }
+    var i;
+    var j;
+    for(i=1; i<=9; i++)
+    {
+        for(j=1; j<=i; j++) {
+            console.log(i);
+        }
+    }
 
 
-    // for (var i = 5; i <= 100; i++) {
-    //     if (i % 5 === 0) {
-    //         console.log(i);
-    //     }
-    // }
+    for (var i = 5; i <= 100; i++) {
+        if (i % 5 === 0) {
+            console.log(i);
+        }
+    }
 
 
 })();
