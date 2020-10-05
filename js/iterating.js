@@ -16,6 +16,7 @@
      */
 
     console.log(names.length);
+    console.log("");
 
     /**
      * TODO:
@@ -27,6 +28,7 @@
     console.log(names[1]);
     console.log(names[2]);
     console.log(names[3]);
+    console.log("");
 
     /**
      * TODO:
@@ -37,6 +39,7 @@
     for (var i = 0; i < names.length; i++) {
         console.log(names[i]);
     }
+    console.log("");
 
     /**
      * TODO:
@@ -46,6 +49,7 @@
     names.forEach(function (names) {
         console.log(names);
     })
+    console.log("");
 
     /**
      * TODO:
@@ -64,19 +68,19 @@
     function returnFirst(array) {
         return array[0];
     }
-
     console.log(returnFirst(names));
+    console.log("");
 
     function returnSecond(array) {
         return array[1];
     }
-
     console.log(returnSecond(names));
+    console.log("");
 
     function returnLast(array) {
         return array[array.length - 1];
     }
-
     console.log(returnLast(names));
+    console.log("");
 
 })();
