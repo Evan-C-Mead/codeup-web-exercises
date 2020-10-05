@@ -65,22 +65,22 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    function returnFirst(array) {
+    function first(array) {
         return array[0];
     }
-    console.log(returnFirst(names));
+    console.log(first(names));
     console.log("");
 
-    function returnSecond(array) {
+    function second(array) {
         return array[1];
     }
-    console.log(returnSecond(names));
+    console.log(second(names));
     console.log("");
 
-    function returnLast(array) {
+    function last(array) {
         return array[array.length - 1];
     }
-    console.log(returnLast(names));
+    console.log(last(names));
     console.log("");
 
 })();
