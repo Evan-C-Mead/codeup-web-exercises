@@ -8,8 +8,8 @@
     // }
     // showMultiplicationTable(7)
 
-    // for (var i = 20; i <= 200; i ++) {
-    //     var randomNumber= Math.floor((Math.random() * 200) + 20);
+    // for (var i = 0; i < 10; i ++) {
+    //     var randomNumber= Math.floor(Math.random() * 180) + 20;
     //     if (randomNumber % 2 === 0) {
     //         console.log(randomNumber + " is even.");
     //     } else {
@@ -17,13 +17,8 @@
     //     }
     // }
 
-    // var i;
-    // var j;
-    // for(i=1; i<=9; i++)
-    // {
-    //     for(j=1; j<=i; j++) {
-    //         console.log(i);
-    //     }
+    // for (var i = 1; i <= 9; i++) {
+    //     console.log(i.toString().repeat(i));
     // }
 
     // for (var i = 5; i <= 100; i++) {
@@ -32,4 +27,5 @@
     //         console.log(i);
     //     }
     // }
+
 })();
