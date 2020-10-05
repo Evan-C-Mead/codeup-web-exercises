@@ -1,21 +1,21 @@
 (function (){
     "use strict";
 
-    function showMultiplicationTable(x) {
-        for (var i = 1; i <= 10; i++) {
-            console.log(x + " x " + i + " = " + (x * i));
-        }
-    }
-    showMultiplicationTable(7)
+    // function showMultiplicationTable(x) {
+    //     for (var i = 1; i <= 10; i++) {
+    //         console.log(x + " x " + i + " = " + (x * i));
+    //     }
+    // }
+    // showMultiplicationTable(7)
 
-    for (var i = 20; i <= 200; i ++) {
-        var randomNumber= Math.floor((Math.random() * 200) + 20);
-        if (randomNumber % 2 === 0) {
-            console.log(randomNumber + " is even.");
-        } else {
-            console.log(randomNumber + " is odd.")
-        }
-    }
+    // for (var i = 20; i <= 200; i ++) {
+    //     var randomNumber= Math.floor((Math.random() * 200) + 20);
+    //     if (randomNumber % 2 === 0) {
+    //         console.log(randomNumber + " is even.");
+    //     } else {
+    //         console.log(randomNumber + " is odd.")
+    //     }
+    // }
 
     // var i;
     // var j;
@@ -32,5 +32,4 @@
     //         console.log(i);
     //     }
     // }
-
 })();
