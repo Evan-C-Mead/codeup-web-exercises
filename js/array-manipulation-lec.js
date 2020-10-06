@@ -1,23 +1,23 @@
 (function(){
 "use strict";
 
-var pies = [
-    "apple",
-    "cherry",
-    "key lime",
-    "huckleberry",
-    "rhubarb"
-];
+// var pies = [
+//     "apple",
+//     "cherry",
+//     "key lime",
+//     "huckleberry",
+//     "rhubarb"
+// ];
 
 // TODO: given the above array how do we log each element to the console?
 
-    for (var i = 0; i < pies.length; i += 1) {
-        console.log(pies[i]);
-    }
+    // for (var i = 0; i < pies.length; i += 1) {
+    //     console.log(pies[i]);
+    // }
 
-    pies.forEach(function (pie) {
-        console.log(pie);
-    })
+    // pies.forEach(function (pie) {
+    //     console.log(pie);
+    // })
 
 /**
  * ===== Concepts to cover:
@@ -134,18 +134,23 @@ var pies = [
 // TODO EXERCISE: create a function that takes in an array of pies baked and return the 3 most recently baked pies
 
 
+// function threeRecent(array) {
+//     return array.slice[array.length - 3];
+// }
+//
+//     console.log(threeRecent(pies));
 
 // ============================= Reversing
 
 // var pies = [
-//     "apple",
-//     "cherry",
 //     "key lime",
+//     "apple",
 //     "huckleberry",
 //     "rhubarb",
+//     "cherry",
 //     "key lime"
 // ];
-//
+
 // pies.reverse();
 
 
@@ -153,11 +158,15 @@ var pies = [
 
 // sort an array in alphabetical order
 
+//     console.log(pies);
 // pies.sort();
+//     console.log(pies);
+//     console.log(pies);
 
 // sort in chronological order
 
 // var numbers = [1, 2, 11, 3, 4];
+//     console.log(numbers);
 // numbers.sort();
 // console.log(numbers); // wat?
 
@@ -170,11 +179,16 @@ var pies = [
 
 // var names = "Bob Sally Mary";
 //
-// var namesArr = names.split(" ");
+//     console.log(names);
 //
-// var namesString = namesArr.join("");
+// var namesArr = names.split("");
 //
-// console.log(namesString);
+//     console.log(namesArr);
+
+    // var namesArr = ["Bob", "Sally", "Mary"]
+    // var namesString = namesArr.join("|");
+    //
+    // console.log(namesString);
 
 // splitting on an empty string
 
@@ -198,17 +212,24 @@ var pies = [
        5125553030
 */
 
-// var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
-//
-// function cleanPhoneNumbers(phoneNums) {
-//
-// }
-//
-// var cleanNumsArr = cleanPhoneNumbers(phoneNumbers);
-//
-// for (var i = 0; i < cleanNumsArr.length; i += 1) {
-//     console.log(cleanNumsArr[i]);
-// }
+var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+
+function cleanPhoneNumbers(phoneNums) {
+    var output = [];
+    var phoneNumsArr = phoneNums.split('\n');
+    phoneNumsArr.forEach(function (phoneNum) {
+        var phoneNumArr = phoneNum.split('-');
+        var phoneNumWithoutDashes = phoneNumArr.join('');
+        output.push(phoneNumWithoutDashes);
+    })
+    return output
+}
+
+var cleanNumsArr = cleanPhoneNumbers(phoneNumbers);
+
+for (var i = 0; i < cleanNumsArr.length; i += 1) {
+    console.log(cleanNumsArr[i]);
+}
 
 
 
