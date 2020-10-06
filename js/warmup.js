@@ -24,6 +24,6 @@ function words(str) {
     return str === str.toUpperCase() || str === str.toLowerCase();
 }
 
-console.log(words("hello, hello"))
-console.log(words("Hello, hello"))
-console.log(words("HELLO, HELLO"))
+console.log(words("hello, hello"));
+console.log(words("Hello, hello"));
+console.log(words("HELLO, HELLO"));
