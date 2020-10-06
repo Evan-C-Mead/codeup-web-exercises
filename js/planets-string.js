@@ -2,11 +2,9 @@
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-
     console.log(planetsString);
 
     var planetsArray = planetsString.split("|");
-
     console.log(planetsArray);
 
     /**
@@ -29,13 +27,16 @@
      * string, and <li> tags around each planet.
      */
 
-    var planetsString2 = "<br>Mercury</br><br>Venus</br><br>Earth</br><br>Mars</br><br>Jupiter</br><br>Saturn</br><br>Uranus</br><br>Neptune</br>";
-
+    var planetsString2 = "Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune";
     console.log(planetsString2);
 
+    var planetsArray2 = planetsString2.split("<br>")
+    console.log(planetsArray2);
 
     var planetsString3 = "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>";
+    console.log(planetsString3);
 
-    console.log(planetsString3)
+    var planetsArray3 = planetsString3.split("|");
+    console.log(planetsArray3);
 
 })();
