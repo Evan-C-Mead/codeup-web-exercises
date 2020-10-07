@@ -254,9 +254,17 @@
 
     console.log(aphorisms);
 
-//TODO:How long is this array? -- 60
+//TODO:How long is this array? -- 61
 
 //TODO: Assign the first quote/author object to the variable firstQuote. Log the quote from the variable. Log the author from the variable.
+
+    var firstQuote = {
+        quote: aphorisms[0],
+        author: aphorisms[0]
+    };
+
+    firstQuote.quote(aphorisms);
+    firstQuote.author(aphorisms);
 
 //TODO: Assign the last quote/author object to the variable lastQuote. Log the quote from the variable. Log the author from the variable.
 
