@@ -75,6 +75,18 @@
         }
     });
 
+    // shoppers.forEach(function (shopper) {
+    //     var initialAmount = shopper.amount;
+    //     var discount = shopper.amount * .12;
+    //     var finalAmount = initialAmount - discount;
+    //
+    //    if (initialAmount > 200) {
+    //        console.log(shopper.name + " spent " + initialAmount + " They get a discount of " + discount + finalAmount);
+    //    } else {
+    //        console.log(shopper.name + " paid " + initialAmount);
+    //    }
+    // });
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -154,20 +166,22 @@
      *      ...
      */
 
-    books.forEach(function (book) {
-        var bookNum = (books.indexOf(book) + 1);
-        console.log("Book # " + bookNum);
+    // books.forEach(function (book) {
+    //     var bookNum = (books.indexOf(book) + 1);
+    //     console.log("Book # " + bookNum);
+    //
+    //     books.forEach(function(title) {
+    //         console.log(("Title: " + book.title));
+    //     });
+    //
+    //     books.forEach(function (author) {
+    //         console.log("Author: " + book.author.firstName + " " + book.author.lastName + " ");
+    //     });
+    //
+    //     console.log("---");
+    // });
 
-        books.forEach(function(title) {
-            console.log(("Title: " + book.title));
-        });
-
-        books.forEach(function (author) {
-            console.log("Author: " + book.author.firstName + " " + book.author.lastName + " ");
-        });
-
-        console.log("---");
-    });
+    books.forEach(showBookInfo);
 
     /**
      * Bonus:
@@ -179,5 +193,26 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook (title, first, last) {
+        return {
+            title: title,
+            author: {
+                firstName: first,
+                lastName: last
+            }
+        };
+    }
+
+    books.push(createBook("New Book", "John", "James"));
+
+    function showBookInfo(book, i) {
+            var output = "";
+            output += "Book # " + (i + 1) + "\n";
+            output += "Title: " + book.title + "\n";
+            output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+            output += "---";
+            console.log(output);
+    }
 
 })();
