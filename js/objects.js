@@ -48,11 +48,32 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function (shopper) {
+        console.log("Shopper name: " + shopper.name);
+
+        shoppers.forEach(function (amount) {
+           var beforeDiscount = shopper.amount;
+            console.log(("Amount before discount: $" + beforeDiscount.toFixed(2)));
+        });
+
+        if (shopper.amount > 200) {
+            var total;
+            total = shopper.amount.toFixed(2);
+            var discount = total * .12;
+            var afterDiscount = total - discount;
+            console.log("Discount is: $" + discount.toFixed(2));
+            console.log("Amount after discount: $" + afterDiscount.toFixed(2));
+        } else {
+            console.log("Discount is : $0.00");
+            console.log("Amount after discount: $" + shopper.amount.toFixed(2));
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -66,6 +87,47 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: "World War Z",
+            author: {
+                firstname: "Max",
+                lastname: "Brooks"
+            }
+        },
+        {
+            title: "Zombie Survival Handbook",
+            author: {
+                firstName: "Max",
+                lastname: "Brooks"
+            }
+        },
+        {
+            title: "The Hobbit",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "The Very Hungry Caterpillar",
+            author: {
+                firstName: "Eric",
+                lastName: "Carle"
+            }
+        },
+        {
+            title: "Where The Wild Things Are",
+            author: {
+                firstName: "Maurice",
+                lastName: "Sendak"
+            }
+        }
+    ];
+    console.log(books[1].title);
+    console.log(books[2].author.lastName);
+    console.log(books[4].author.firstName);
 
     /**
      * TODO:
