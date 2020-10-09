@@ -5,11 +5,10 @@
     var circle = {
         radius: 3,
 
-        getArea: function () {
+        getArea: function (num) {
             // TODO: complete this method
             // hint: area = pi * radius^2
-            let area = Math.PI * Math.pow(3, 2)
-            return area; // TODO: return the proper value
+            return Math.PI * Math.pow(num, 2); // TODO: return the proper value
         },
 
         logInfo: function (doRounding) {
@@ -17,10 +16,11 @@
 
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
-            if (doRounding ===  true) {
-                return ;
+            if (doRounding) {
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(this.getArea(this.radius)));
+            } else {
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea(this.radius));
             }
-            console.log("Area of a circle with radius: " + this.radius + ", is: ");
         }
     };
 
@@ -32,6 +32,28 @@
 
     console.log("=======================================================");
     // TODO: Change the radius of the circle to 5.
+
+    var circle = {
+        radius: 5,
+
+        getArea: function (num) {
+            // TODO: complete this method
+            // hint: area = pi * radius^2
+            return Math.PI * Math.pow(num, 2); // TODO: return the proper value
+        },
+
+        logInfo: function (doRounding) {
+            // TODO: complete this method.
+
+            // If doRounding is true, round the result to the nearest integer.
+            // Otherwise, output the complete value
+            if (doRounding) {
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(this.getArea(this.radius)));
+            } else {
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea(this.radius));
+            }
+        }
+    };
 
     // log info about the circle
     console.log("Raw circle information");
