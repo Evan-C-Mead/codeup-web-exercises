@@ -16,6 +16,24 @@
     let randomNum = Math.random() * 2;
     console.log(randomNum);
 
+    // Want between 2k and 3k
+    // let randSelection = Math.random()* 2000 + 1000;
+
+    // ***** ==> THIS IS HOW YOU DEFINE A RANGE BETWEEN NUMBERS <== ***** //
+    // let chosenNum = 2000 + Math.random()*(3000 - 2000);
+
+    // TODO: WRITE A METHOD TO FIND A RANDOM NUMBER BETWEEN A RANGE OF TWO NUMBERS
+    // * HINT: The min and max should be passed into the method as parameters *
+    let randomNumber = 35 + Math.random()*(276 - 35);
+    console.log("NEW RANDOM NUMBER IS: " + randomNumber.toFixed(0));
+
+    function randNumbs(min, max) {
+        var range = Math.random() * (max - min) + min;
+        return range.toFixed(0);
+    }
+
+    console.log("OTHER RANDOM NUMBER: " + randNumbs(478, 786));
+
     // ==> Math.round()
     // Can't use decimal when referring to an array index, so we round it to the nearest integer
     console.log(Math.round(randomNum))
@@ -68,5 +86,25 @@
     // ==> Math.sqrt()
     console.log("The square root of 16: " + Math.sqrt(16));
     console.log("The square root of 64: " + Math.sqrt(64));
+
+
+    // ***** Math Constants ***** //
+
+    // ==> Math.PI
+    // π is used to calculate circumference and area of a circle
+    // Circumference = 2 * π * r = π * D(diameter)°
+    // alt + p = π
+    // alt + shift + 8 = °
+    let circumferernce = Math.PI * 5;
+    console.log("Circumference of a circle with diameter of 5: " + circumferernce.toFixed(3));
+    let area = Math.PI * Math.pow(2.5, 2);
+    console.log("Area of a circle with diameter of 5: " + area.toFixed(3));
+
+    // ==> Math.E
+    console.log("Euler's constant: " + Math.E)
+
+    //Scientific notation
+    // 4.58 * e^9
+    console.log("Number represented by 4.58 * e^9: " + (4.58 * Math.pow(Math.E, 9)).toFixed(2));
 
 })();
