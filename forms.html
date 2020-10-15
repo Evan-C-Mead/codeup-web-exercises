@@ -35,19 +35,34 @@
         <br>
         <fieldset>
             <legend>How did you hear about us?</legend>
-            <label><input type="radio" name="us-answer" value="a"> Billboard</label>
+            <label><input type="radio" name="us-answer" value="billboard"> Billboard</label>
             <br>
-            <label><input type="radio" name="us-answer" value="b"> Radio advertisement</label>
+            <label><input type="radio" name="us-answer" value="radio"> Radio advertisement</label>
             <br>
-            <label><input type="radio" name="us-answer" value="c"> Internet advertisement</label>
+            <label><input type="radio" name="us-answer" value="internet"> Internet advertisement</label>
             <br>
-            <label><input type="radio" name="us-answer" value="d"> Other</label>
+            <label><input type="radio" name="us-answer" value="other"> Other</label>
+        </fieldset>
+        <br>
+        <br>
+        <fieldset>
+            <legend>Other way you heard about us</legend>
+            <label><input type="checkbox" name="other-way" value="billboard">Billboard</label>
+            <br>
+            <label><input type="checkbox" name="other-way" value="radio">Radio</label>
+            <br>
+            <label><input type="checkbox" name="other-way" value="internet">Internet</label>
+            <br>
+            <label><input type="checkbox" name="other-way" value="other">Other</label>
+            <br>
+            <label><textarea name="other" id="other" placeholder="Please explain" cols="30" rows="1"></textarea></label>
         </fieldset>
         <br>
         <br>
         <label for="browser-choice">What internet browser are you using?</label>
         <br>
         <select id="browser-choice" name="browser-choice">
+            <option disabled selected value> -- Select a browser -- </option>
             <option value="chrome">Chrome</option>
             <option value="safari">Safari</option>
             <option value="mozilla">Mozilla</option>
@@ -59,6 +74,7 @@
         <div>
             <button>Submit</button>
         </div>
+        <br>
     </form>
 </main>
 
