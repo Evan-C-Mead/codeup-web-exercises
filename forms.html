@@ -19,28 +19,43 @@
 
 <main>
     <form method="POST" action="https://hookb.in/dm3ZMlZ0X6T9RRzPg2y8">
-
-        <label for="username">Username: </label>
-        <input id="username" name="username" type="text">
         <br>
         <br>
-        <label for="password">Password: </label>
-        <input id="password" name="password" type="text">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Enter Username">
         <br>
         <br>
-        <label for="bio">Bio: </label>
-        <textarea name="bio" id="bio" placeholder="Enter something about yourself!" cols="50" rows="5"></textarea>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="text" placeholder="Enter Password">
         <br>
         <br>
-        <input type="submit">
+        <label for="bio">Bio</label>
+        <textarea name="bio" id="bio" placeholder="Enter something about yourself!" cols="50" rows="3"></textarea>
+        <br>
+        <br>
+        <fieldset>
+            <legend>How did you hear about us?</legend>
+            <label>Billboard <input type="radio" name="us-answer" value="a"></label>
+            <label>Radio advertisement <input type="radio" name="us-answer" value="b"></label>
+            <label>Internet advertisement <input type="radio" name="us-answer" value="c"></label>
+            <label>Other <input type="radio" name="us-answer" value="d"></label>
+        </fieldset>
+        <br>
+        <br>
+        <label for="browser-choice">What internet browser are you using?</label>
+        <select id="browser-choice" name="browser-choice">
+            <option value="chrome">Chrome</option>
+            <option value="safari">Safari</option>
+            <option value="mozilla">Mozilla</option>
+            <option value="brave">Brave</option>
+            <option value="ie">Internet Explorer</option>
+        </select>
+        <br>
+        <br>
+        <div>
+            <button>Submit</button>
+        </div>
     </form>
-
-    <form method="GET" action="https://hookb.in/dm3ZMlZ0X6T9RRzPg2y8">
-        <input type="text" name="zip code1" placeholder="enter zip code" id="zip code 1">
-        <input type="text" name="zip code 2" placeholder="enter zip code" id="zip code 2">
-        <button>Submit</button>
-    </form>
-
 </main>
 
 <footer>
