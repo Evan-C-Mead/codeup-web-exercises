@@ -11,23 +11,25 @@
 
 <main>
     <form method="POST" action="https://request-inspector.glitch.me">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Enter Username" autofocus required>
+        </div>
         <br>
+        <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="text" placeholder="Enter E-mail" required>
+        </div>
         <br>
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" placeholder="Enter Username" autofocus required>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter Password" required>
+        </div>
         <br>
-        <br>
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="text" placeholder="Enter E-mail" required>
-        <br>
-        <br>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" placeholder="Enter Password" required>
-        <br>
-        <br>
-        <label for="stay-logged-in"></label>
-        <input id="stay-logged-in" name="stay-logged-in" value="true" type="checkbox" checked> Keep me logged in for 2 weeks
-        <br>
+        <div>
+            <label for="stay-logged-in"></label>
+            <input id="stay-logged-in" name="stay-logged-in" value="true" type="checkbox" checked> Keep me logged in for 2 weeks
+        </div>
         <br>
         <div>
             <button>Login</button>
