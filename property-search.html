@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Property Search</title>
+</head>
+<body>
+
+<main>
+    <form method="GET" action="https://request-inspector.glitch.me">
+        <div>
+            <fieldset>
+                <legend>Property Type</legend>
+                <label><input name="prop-type" value="house" type="checkbox">House</label>
+                <label><input name="prop-type" value="apartment" type="checkbox">Apartment</label>
+                <label><input name="prop-type" value="townhome" type="checkbox">Town Home</label>
+                <label><input name="prop-type" value="condo" type="checkbox">Condo</label>
+            </fieldset>
+        </div>
+        <br>
+        <div>
+            <label for="square-footage">Select SQFT</label>
+            <select id="square-footage" name="square-footage">
+                <option disabled selected value> -- Select Sqft --</option>
+                <option value=">1000">> 1000</option>
+                <option value="1000-1500">1000-1500</option>
+                <option value="1500-2000">1500-2000</option>
+                <option value="2000-2500">2000-2500</option>
+                <option value="2500-3000">2500-3000</option>
+                <option value="3000+">3000+</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="min-price"></label>
+            <input id="min-price" name="min-price" type="text" placeholder="Min. Price">
+            <label for="max-price"></label>
+            <input id="max-price" name="max-price" type="text" placeholder="Max. Price">
+        </div>
+        <br>
+        <div>
+            <label for="zip-code">Enter Zip Code</label>
+            <input id="zip-code" name="zip-code" type="text" placeholder="Zip Code">
+        </div>
+        <br>
+        <div>
+            <button>Search now</button>
+        </div>
+    </form>
+</main>
+
+</body>
+</html>
