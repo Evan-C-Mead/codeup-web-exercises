@@ -6,10 +6,24 @@ h1 {
 
 h2  {
     color: darkgoldenrod;
+    text-decoration: underline;
+    background-color: purple;
+}
+
+header {
+    text-align: center;
 }
 
 body {
     background: darkgray;
+}
+
+ul {
+    list-style: square;
+}
+
+* {
+    font-family: Rubik;
 }
 
 /* Picture layout */
