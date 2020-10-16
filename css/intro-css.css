@@ -1,0 +1,16 @@
+/* single line comment */
+
+/*
+   multi-line comment
+*/
+
+/* Headers */
+h1 {
+    color: mediumslateblue;
+    text-decoration: underline;
+}
+
+h3 {
+    color: crimson;
+    background-color: darkorange;
+}
