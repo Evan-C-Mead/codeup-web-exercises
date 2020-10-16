@@ -1,11 +1,11 @@
 /* Headers */
 h1 {
-    color: darkgoldenrod; /* single line comment */
+    color: darkorange; /* single line comment */
     text-decoration: underline;
 }
 
 h2  {
-    color: darkgoldenrod;
+    color: darkorange;
     text-decoration: underline;
     background-color: purple;
 }
@@ -15,7 +15,8 @@ header {
 }
 
 body {
-    background: darkgray;
+    background: darkgray url("../img/woodbackground.jpg");
+    background-size: 60em;
 }
 
 ul {
@@ -24,6 +25,10 @@ ul {
 
 * {
     font-family: Rubik;
+}
+
+table {
+    ;
 }
 
 /* Picture layout */
