@@ -23,12 +23,36 @@ ul {
     list-style: square;
 }
 
-* {
-    font-family: Rubik;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-table {
-    ;
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: gray;}
+
+* {
+    font-family: Tahoma;
+}
+
+a:link {
+    color: orangered;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: blue;
 }
 
 /* Picture layout */
