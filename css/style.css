@@ -14,15 +14,18 @@ header {
     text-align: center;
 }
 
+/* Body Background */
 body {
     background: darkgray url("../img/woodbackground.jpg");
     background-size: 60em;
 }
 
+/* Unordered List */
 ul {
     list-style: square;
 }
 
+/* Table */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -35,10 +38,12 @@ th, td {
 
 tr:nth-child(even) {background-color: gray;}
 
+/* Page Font*/
 * {
     font-family: Tahoma;
 }
 
+/* Anchors */
 a:link {
     color: orangered;
 }
