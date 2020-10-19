@@ -1,3 +1,11 @@
+:root {
+    /* Created variables to use */
+    --bg-info: #cddeff;
+    --text-info: #291d88;
+    --bg-success: #cff3da;
+    --text-success: #03632c;
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -15,13 +23,13 @@ body, html {
 }
 
 .message-info {
-    background: #cddeff;
-    color: #291d88;
+    background: var(--bg-info);
+    color: var(--text-info);
 }
 
 .message-success {
-    background: #cff3da;
-    color: #03632c;
+    background: var(--bg-success);
+    color: var(--text-success);
 }
 
 .message-warning {
