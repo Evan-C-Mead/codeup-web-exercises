@@ -7,16 +7,16 @@ body, html {
 }
 
 .message {
-    width: 80%;
-    margin: 15px auto;
     border: 1px solid gray;
     border-radius: 5px;
-    padding: 10px;
+    width: 80%;
+    padding: .5em;
+    margin: .5em auto;
 }
 
 .message-info {
     background: #cddeff;
-    color: #291d88
+    color: #291d88;
 }
 
 .message-success {
