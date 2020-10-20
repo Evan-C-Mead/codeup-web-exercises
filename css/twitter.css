@@ -49,6 +49,14 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
+}
+.profile-image {
+    position: absolute;
+    top: 240px;
+}
+.profile-form {
+    line-height: 80px;
 }
 .btn {
     border: 1px solid var(--main-link-color);
