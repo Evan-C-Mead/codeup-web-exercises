@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    height: 4.25em;
+    background: lightgray;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    font-family: Work Sans;
+    font-weight: bold;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: Verdana;
+    display: inline-block;
+    margin: 1em;
+}
+
+nav a:hover {
+    color: blue;
+}
+
+nav i:hover {
+    color: blue;
+}
+
+nav ul li:nth-child(5) {
+    font-size: 3em;
+    font-family: Montserrat;
+    margin: auto;
+}
+
+nav ul li:nth-child(6) {
+    margin-left: auto;
+}
+
+i {
+    color: black;
+}
+
