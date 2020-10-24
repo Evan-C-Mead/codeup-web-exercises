@@ -61,3 +61,14 @@ ul{
 .iconContainer > i{
     font-size: 25px;
 }
+
+div a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin: 1em;
+}
+
+div a:hover {
+    color: orangered;
+}
