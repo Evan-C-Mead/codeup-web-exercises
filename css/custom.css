@@ -8,14 +8,17 @@ div i:hover {
 
 .d-sm-none {
     width: 100%;
-    display: flex;
-    justify-content: stretch;
+    /*display: flex;*/
+    /*justify-content: stretch;*/
 }
 
 .display-4{
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
     text-align: center;
     background-color: white;
     opacity: 0.5;
+}
+.fa-shopping-cart {
+    color: white;
 }
