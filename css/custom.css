@@ -5,3 +5,16 @@ i {
 div i:hover {
     color: gray;
 }
+
+.d-sm-none {
+    display: flex;
+    align-content: center;
+}
+
+.display-4{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    opacity: 0.5;
+}
