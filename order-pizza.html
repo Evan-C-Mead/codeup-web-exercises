@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg py-md-1 navbar-light bg-light">
     <a class="navbar-brand" href="#">Pizza World</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +31,10 @@
             </li>
             <li>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you</button>
+                    <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Zip code"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Search stores near you
+                    </button>
                 </form>
             </li>
         </ul>
@@ -51,27 +53,56 @@
     <h2>Build your own pizza!</h2>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="badge badge-light">1</span>Size and crust</a>
+            <a class="nav-link badge-success" href="#"><span class="badge badge-light">1</span>Size and crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="badge badge-light">2</span>Cheese and sauce</a>
+            <a class="nav-link badge-danger" href="#"><span class="badge badge-light">2</span>Cheese and sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="badge badge-light">3</span>Toppings</a>
+            <a class="nav-link badge-warning" href="#"><span class="badge badge-light">3</span>Toppings</a>
         </li>
     </ul>
+    <div class="card">
+        <div class="card-header bg-info text-white">Choose size and crust</div>
+        <div class="card">
+            <div class="card">
+                <div class="card-header bg-dark text-white">Hand Tossed</div>
+                <div class="card-body">Garlic seasoned crust with a rich, buttery taste.</div>
+                <ul class="list-group">
+                    <li class="list-group-item"><label><input type="radio" name="handTossed" id="handTossed1"
+                                                                     value="option1"></label> Small (10")
+                    </li>
+                    <li class="list-group-item"><label><input type="radio" name="handTossed" id="handTossed2"
+                                                              value="option2"></label> Medium (12")
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-header bg-dark text-white">Crispy Thin</div>
+                <div class="card-body">Thin enough for optimum cripsy to crunch ratio.</div>
+                <ul class="list-group">
+                    <li class="list-group-item"><label><input type="radio" name="crispyThin" id="crispyThin1"
+                                                                     value="option3"></label> Medium (12")
+                    </li>
+                    <li class="list-group-item"><label><input type="radio" name="crispyThin" id="crispyThin2"
+                                                              value="option4"></label> Large (14")
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-right"><a href="#" class="btn btn-info">Next step</a></div>
+        </div>
 
-</div>
+    </div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
