@@ -53,7 +53,7 @@
 
     <ul class="nav nav-tabs" id="pizza" role="tablist">
         <li class="nav-item">
-            <a class="nav-link badge-success active" id="size-crust-tab" data-toggle="tab" href="#home" role="tab"
+            <a class="nav-link badge-success fade show active" id="size-crust-tab" data-toggle="tab" href="#home" role="tab"
                aria-controls="home" aria-selected="true"><span class="badge badge-light">1</span>Size and crust</a>
         </li>
         <li class="nav-item">
@@ -66,6 +66,7 @@
                aria-controls="contact" aria-selected="false"><span class="badge badge-light">3</span>Toppings</a>
         </li>
     </ul>
+
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="card">
@@ -104,7 +105,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="card-footer text-right"><a href="#" class="btn btn-info">Next step</a></div>
+                    <div class="card-footer text-right"><a data-toggle="tab" href="#profile" class="btn btn-info">Next step</a></div>
                 </div>
             </div>
         </div>
@@ -139,7 +140,7 @@
                         <option>Extra</option>
                     </select>
                 </div>
-                <div class="card-footer text-right"><a href="#" class="btn btn-info">Previous step</a> <a href="#"
+                <div class="card-footer text-right"><a data-toggle="tab" href="#home" class="btn btn-info">Previous step</a> <a data-toggle="tab" href="#contact"
                                                                                                           class="btn btn-info">Next
                     step</a></div>
             </div>
@@ -201,7 +202,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="card-footer text-right"><a href="#" class="btn btn-info">Previous step</a> <a href="#"
+                <div class="card-footer text-right"><a data-toggle="tab" href="#profile" class="btn btn-info">Previous step</a> <a href="#"
                                                                                                           class="btn btn-info">Checkout
                     <i class="fas fa-shopping-cart"></i></a></div>
             </div>
