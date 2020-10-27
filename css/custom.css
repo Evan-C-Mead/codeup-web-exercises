@@ -1,0 +1,7 @@
+i {
+    color: green;
+}
+
+div i:hover {
+    color: gray;
+}
