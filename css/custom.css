@@ -1,3 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-sm-none {
+    position: relative;
+    text-align: center;
+    margin: 1em;
+}
+
+.display-4{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
 i {
     color: green;
 }
@@ -6,19 +27,6 @@ div i:hover {
     color: gray;
 }
 
-.d-sm-none {
-    width: 100%;
-    /*display: flex;*/
-    /*justify-content: stretch;*/
-}
-
-.display-4{
-    /*display: flex;*/
-    /*justify-content: center;*/
-    text-align: center;
-    background-color: white;
-    opacity: 0.5;
-}
 .fa-shopping-cart {
     color: white;
 }
