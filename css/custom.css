@@ -7,8 +7,9 @@ div i:hover {
 }
 
 .d-sm-none {
+    width: 100%;
     display: flex;
-    align-content: center;
+    justify-content: stretch;
 }
 
 .display-4{
