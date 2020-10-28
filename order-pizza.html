@@ -43,7 +43,7 @@
 </nav>
 
 <div class="container">
-    <div class="d-sm-none d-md-block">
+    <div class="d-none d-sm-block">
         <div class="container">
             <img src="img/pizza.png" alt="pizza">
             <h1 class="display-4">Welcome to Pizza World!</h1>
@@ -53,22 +53,24 @@
 
     <ul class="nav nav-tabs" id="pizza" role="tablist">
         <li class="nav-item">
-            <a class="nav-link badge-success fade show active" id="size-crust-tab" data-toggle="tab" href="#home" role="tab"
-               aria-controls="home" aria-selected="true"><span class="badge badge-light">1</span>Size and crust</a>
+            <a class="nav-link badge-success fade show active" id="size-crust-tab" data-toggle="tab" href="#sauce-size"
+               role="tab"
+               aria-controls="sauce-size" aria-selected="true"><span class="badge badge-light">1</span>Size and
+                crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link badge-danger" id="cheese-sauce-tab" data-toggle="tab" href="#profile" role="tab"
-               aria-controls="profile" aria-selected="false"><span class="badge badge-light">2</span>Cheese and
+            <a class="nav-link badge-danger" id="cheese-sauce-tab" data-toggle="tab" href="#cheese-sauce" role="tab"
+               aria-controls="cheese-sauce" aria-selected="false"><span class="badge badge-light">2</span>Cheese and
                 sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link badge-warning" id="toppings-tab" data-toggle="tab" href="#contact" role="tab"
-               aria-controls="contact" aria-selected="false"><span class="badge badge-light">3</span>Toppings</a>
+            <a class="nav-link badge-warning" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab"
+               aria-controls="toppings" aria-selected="false"><span class="badge badge-light">3</span>Toppings</a>
         </li>
     </ul>
 
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show active" id="sauce-size" role="tabpanel" aria-labelledby="size-crust-tab">
             <div class="card">
                 <div class="card-header bg-info text-white">Choose size and crust</div>
                 <div class="card">
@@ -105,11 +107,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="card-footer text-right"><a data-toggle="tab" href="#profile" class="btn btn-info">Next step <i class="fas fa-chevron-right"></i></a></div>
+                    <div class="card-footer text-right"><a data-toggle="tab" href="#cheese-sauce" class="btn btn-info">Next
+                        step <i class="fas fa-chevron-right"></i></a></div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+        <div class="tab-pane fade" id="cheese-sauce" role="tabpanel" aria-labelledby="cheese-sauce-tab">
             <div class="card">
                 <div class="card-header bg-info text-white">Choose cheese and sauce</div>
                 <div class="card">
@@ -140,12 +144,14 @@
                         <option>Extra</option>
                     </select>
                 </div>
-                <div class="card-footer text-right"><a data-toggle="tab" href="#home" class="btn btn-info"><i class="fas fa-chevron-left"></i> Previous step</a> <a data-toggle="tab" href="#contact"
-                                                                                                          class="btn btn-info">Next
+                <div class="card-footer text-right"><a data-toggle="tab" href="#sauce-size" class="btn btn-info"><i
+                        class="fas fa-chevron-left"></i> Previous step</a> <a data-toggle="tab" href="#toppings"
+                                                                              class="btn btn-info">Next
                     step <i class="fas fa-chevron-right"></i></a></div>
             </div>
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
             <div class="card">
                 <div class="card-header bg-info text-white">Choose toppings</div>
                 <div class="card">
@@ -202,8 +208,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="card-footer text-right"><a data-toggle="tab" href="#profile" class="btn btn-info"><i class="fas fa-chevron-left"></i> Previous step</a> <a href="#"
-                                                                                                          class="btn btn-info">Checkout
+                <div class="card-footer text-right"><a data-toggle="tab" href="#cheese-sauce" class="btn btn-info"><i
+                        class="fas fa-chevron-left"></i> Previous step</a> <a href="#"
+                                                                              class="btn btn-info">Checkout
                     <i class="fas fa-shopping-cart"></i></a></div>
             </div>
         </div>

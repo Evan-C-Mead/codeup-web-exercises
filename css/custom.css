@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.d-sm-none {
+.d-none {
     position: relative;
     text-align: center;
     margin: 1em;
