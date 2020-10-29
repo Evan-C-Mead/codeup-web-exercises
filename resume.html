@@ -13,90 +13,121 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-        #name-jumbotron {
-            height: 30vh;
+
+        #hr-green {
+            border-top: 3px solid green;
         }
 
+        i {
+            color: black;
+        }
+
+        a {
+            color: black;
+        }
+
+        .section-header {
+            color: green;
+        }
 
     </style>
 
 </head>
 <body>
 
-<div class="jumbotron jumbotron-fluid bg-white" id="name-jumbotron">
-    <div class="container">
-        <h1 class="display-2 text-center">Cody The Duck</h1>
-        <h2 class="display-4 text-center">Software Developer</h2>
+<div class="container pt-5 pb-5" id="main-container">
+
+    <div id="header">
+        <div class="row text-center">
+            <div class="col" id="name-col">
+                <h1 id="name-header">CODY THE DUCK</h1>
+            </div>
+        </div>
+
+        <div class="row text-center mt-3" id="job-title-col">
+            <div class="col-12">
+                <h2>Software Developer</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </div>
+        </div>
+
         <hr>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam animi, consectetur deleniti
-            ea eos et exercitationem facere, maxime nam nemo odio odit quae quaerat quibusdam sit sunt, veniam. Ad amet
-            architecto, commodi, consectetur debitis dolor ea facere fugit nulla provident quasi repudiandae suscipit
-            temporibus. Debitis facilis natus officiis porro!</p>
-    </div>
-</div>
 
-<nav class="navbar navbar-light bg-white" id="main-nav">
-    <span class="navbar-text"><a href="#"><i class="fas fa-phone-alt"></i> 555-555-5555</a></span>
-    <span class="navbar-text"><a href="#"><i class="fas fa-envelope"></i> cody.duck@codeup.com</a></span>
-    <span class="navbar-text"><a href="#"><i class="fab fa-linkedin"></i> cody-the-duck</a></span>
-    <span class="navbar-text"><a href="#"><i class="fab fa-github-square"></i> cody-the-duck</a></span>
-</nav>
+        <div class="row mt-3 text-center" id="contact-info-row">
+            <div class="col-12 col-lg-3 social-icon">
+                <i class="fas fa-phone-alt"></i>
+                555-555-5555
+            </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3>SKILLS AND ABILITIES</h3>
-                    <ul class="card-list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </div>
+            <div class="col-12 col-lg-3 social-icon">
+                <i class="fas fa-envelope"></i>
+                cody@codeup.com
             </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3>ACADEMIC</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, expedita!</p>
-                </div>
+
+            <div class="col-12 col-lg-3 social-icon">
+                <a href=""><i class="fab fa-linkedin-in"></i> @cody-the-duck</a>
             </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3>PROFESSIONAL EXPERIENCE</h3>
-                    <ul class="card-list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </div>
+
+            <div class="col-12 col-lg-3 social-icon">
+                <a href=""><i class="fab fa-github"></i> @cody-the-duck</a>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
+    <hr id="hr-green">
+
     <div class="row">
-        <div class="col-12 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3>DEVELOPMENT PROJECTS</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aspernatur, eligendi illo iste odit, quasi quia similique sint suscipit tempore, ullam ut voluptates. Optio.</p>
-                </div>
+        <div class="col-12 col-md-4" id="left-col">
+
+            <div class="pt-4">
+                <h4 class="section-header">SKILLS AND ABILITIES</h4>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+
+            <div class="pt-4">
+                <h4 class="section-header">ACADEMIC</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="pt-4">
+                <h4 class="section-header">PROFESSIONAL EXPERIENCE</h4>
+                <p>Job 2</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <p>Job 1</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3>AWARDS AND INVOLVEMENT</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aspernatur, eligendi illo iste odit, quasi quia similique sint suscipit tempore, ullam ut voluptates. Optio.</p>
-                </div>
+
+        <div class="col-12 col-md-8" id="right-col">
+
+            <div class="pt-4">
+                <h4 class="section-header">DEVELOPMENT PROJECTS</h4>
+
+                <p>Project 3</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <p>Project 2</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <p>Project 1</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+
+            <div class="pt-4">
+                <h4 class="section-header">AWARDS AND INVOLVEMENT</h4>
+
+                <p>AWARD 1</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <p>INVOLVEMENT 1</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
     </div>
