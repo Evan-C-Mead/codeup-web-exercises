@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM Lecture</title>
+</head>
+<body>
+
+<h1>This is the BOM</h1>
+
+<script>
+
+    (function() {
+    "use strict";
+
+        // First Example \\
+        // alert("This is a test");
+        // var yourName = prompt("Enter your name");
+        // var answer = confirm("Are you in the Jupiter cohort?");
+        //
+        // console.log(yourName);
+        // console.log(answer);
+
+        // Second Example \\
+        // this code will produce a console log every second when count >= max, the interval is cancelled, and the logging will stop
+        var count = 0;
+        var max = 10;
+        var interval = 1000; // interval time in milliseconds
+
+        var intervalId = setInterval(function () {
+            if (count >= max) {
+                clearInterval(intervalId);
+                console.log('All done');
+            } else {
+                count++;
+                console.log('Repeating this line ' + count);
+            }
+        }, interval);
+
+        console.log(intervalId);
+
+        function sayHello() {
+            console.log("Hello there!");
+        }
+
+        // Third Example \\
+        var delay = 3000; // delay time in milliseconds
+
+        var timeoutId = setTimeout(function () {
+            console.log("Timing out soon!")
+            alert('Here is a delayed hello!');
+        }, delay);
+
+        var cancel = confirm("Going to cancel timeout")
+
+        if (cancel) {
+            clearTimeout(timeoutId)
+        }
+        // to cancel the timeout, you can call clearTimeout(timeoutId); prior to the delay expiring
+
+        // Fourth Example \\
+
+
+    })();
+
+</script>
+
+</body>
+</html>
