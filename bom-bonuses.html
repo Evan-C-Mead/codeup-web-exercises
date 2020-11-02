@@ -48,23 +48,23 @@ Include the following methods...
   pause() - pauses counter
   reset() - stops counter and resets count to zero-->
 
-<button type="button" class="btn btn-danger justify-content-center" id="stop" >Stop the song</button>
+<button type="button" class="btn btn-danger justify-content-center" id="stop">Stop the song</button>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
-         var count = 0;
-         var interval = 1000;
-         var song = ['"All a-..."', "-round the ...", "mulberry...", "bush, The...", "monkey...", "chased the...", "wea-...", "-sel...", "stopped to...", "pull up his...", "sock,...", "Pop!...", "goes the...", "wea-...", "-sel."]
+        var count = 0;
+        var interval = 1000;
+        var song = ['"All a-..."', "-round the ...", "mulberry...", "bush, The...", "monkey...", "chased the...", "wea-...", "-sel...", "stopped to...", "pull up his...", "sock,...", "Pop!...", "goes the...", "wea-...", "-sel."]
 
-         var jackInTheBox = setInterval(function () {
-             if (song.count>= 16) {
-                 clearInterval(jackInTheBox);
-                 console.log("Song complete")
-             } else {
-                 count++;
-                 console.log(song);
-             }
+        var jackInTheBox = setInterval(function () {
+            if (song.count >= 16) {
+                clearInterval(jackInTheBox);
+                console.log("Song complete")
+            } else {
+                count++;
+                console.log(song);
+            }
         }, interval);
 
         function stopSong() {
