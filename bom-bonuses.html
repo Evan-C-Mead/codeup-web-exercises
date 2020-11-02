@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
+
+    <title>BOM Bonuses</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<!--Write out JS code to enable the following functionality...
+
+---------- Jack-In-The-Box
+When a 'playSinging' function is called in the JS console, the following will output in the console:
+    "All a-...",
+    "-round the ...",
+    "mulberry...",
+    "bush, The...",
+    "monkey...",
+    "chased the...",
+    "wea-...",
+    "-sel...",
+    "The monkey...",
+    "stopped to...",
+    "pull up his...",
+    "sock,...",
+    "Pop!...",
+    "goes the...",
+    "wea-...",
+    "-sel."
+Each phrase should display after 1 second.
+A 'stopSinging' function, when called during the 'song', will stop the lyrics immediately before finishing.
+
+EXTRA BONUS: use the Web Speech API to have your computer say the lyrics
+
+---------- Build a Stop Watch
+Define an object called stopWatch.
+Include the following properties...
+  intervalId
+  count
+Include the following methods...
+  start() - starts console logging an increasing count every second
+  pause() - pauses counter
+  reset() - stops counter and resets count to zero-->
+
+<button type="button" class="btn btn-danger justify-content-center" id="stop" >Stop the song</button>
+
+<script>
+    (function() {
+        "use strict";
+         var count = 0;
+         var interval = 1000;
+         var song = ['"All a-..."', "-round the ...", "mulberry...", "bush, The...", "monkey...", "chased the...", "wea-...", "-sel...", "stopped to...", "pull up his...", "sock,...", "Pop!...", "goes the...", "wea-...", "-sel."]
+
+         var jackInTheBox = setInterval(function () {
+             if (song.count>= 16) {
+                 clearInterval(jackInTheBox);
+                 console.log("Song complete")
+             } else {
+                 count++;
+                 console.log(song);
+             }
+        }, interval);
+
+        function stopSong() {
+            clearInterval(jackInTheBox);
+            alert("Song stopped")
+        }
+
+        var stopper = document.getElementById('stop');
+        stopper.addEventListener('click', stopSong);
+    })();
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
