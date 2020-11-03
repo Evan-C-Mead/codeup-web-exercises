@@ -87,15 +87,28 @@
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
         var tableList = document.getElementsByTagName("li");
-        for (var i = 0; i < tableList.length; i++) {
-            if (tableList[i].getAttribute('data-dbid') === '1') {
-                tableList[i].style.color = "blue";
-                continue;
+        // for (var i = 0; i < tableList.length; i++) {
+        //     if (tableList[i].getAttribute('data-dbid') === '1') {
+        //         tableList[i].style.color = "blue";
+        //         continue;
+        //     }
+        //     if (i % 2 !== 0) {
+        //         tableList[i].style.color = "grey";
+        //     }
+        // }
+
+        var btn3 = document.getElementById("btn3");
+        btn3.addEventListener('click', function () {
+            for (var i = 0; i < tableList.length; i++) {
+                if (tableList[i].getAttribute('data-dbid') === '1') {
+                    tableList[i].style.color = "blue";
+                    continue;
+                }
+                if (i % 2 !== 0) {
+                    tableList[i].style.color = "grey";
+                }
             }
-            if (i % 2 !== 0) {
-                tableList[i].style.color = "grey";
-            }
-        }
+        })
 
         // var dbidOne = document.querySelector("li:nth-child(1)");
         // dbidOne.style.color = "blue";
@@ -105,7 +118,13 @@
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!";
+        // subParagraphs[0].innerText = "Mission Accomplished!";
+
+        var btn4 = document.getElementById("btn4");
+        btn4.addEventListener('click', function () {
+            subParagraphs[0].innerText = "Mission Accomplished!";
+
+        })
 
     })();
 </script>
