@@ -33,14 +33,21 @@
         console.log(mainHeader)
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        var inner = document.getElementById("main-header");
+        inner.innerHTML = "Javascript is Cool"
 
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        var subHeader = document.getElementById('sub-header');
+        console.log(subHeader)
 
         // TODO: Set the text color of subHeader to blue
+        Object.assign(subHeader.style, {
+            "color": "blue"
+        });
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        var listItems = document.getElementsByTagName('li');
+        console.log(listItems)
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
