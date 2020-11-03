@@ -103,11 +103,11 @@ console.log("test");
 //     });
 //
 // // styling node list
-//     var tableRows = document.getElementsByTagName("tr");
-//     for (var i = 0; i < tableRows.length; i += 1) {
-//         tableRows[i].style.background = "red";
-//     }
-//
+    var tableRows = document.getElementsByTagName("tr");
+    for (var i = 0; i < tableRows.length; i += 1) {
+        tableRows[i].style.background = "red";
+    }
+
 //
 // // ========== Add / Remove Elements
 //
