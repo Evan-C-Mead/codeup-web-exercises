@@ -53,13 +53,17 @@
         // TODO: Set text color of li with dbid = 1 to blue
         var tableList = document.getElementsByTagName("li");
         for (var i = 0; i < tableList.length; i++) {
+            if (tableList[i].getAttribute('data-dbid') === '1') {
+                tableList[i].style.color = "blue";
+                continue;
+            }
             if (i % 2 !== 0) {
                 tableList[i].style.color = "grey";
             }
         }
 
-        var dbidOne = document.querySelector("li:nth-child(1)");
-        dbidOne.style.color = "blue";
+        // var dbidOne = document.querySelector("li:nth-child(1)");
+        // dbidOne.style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
