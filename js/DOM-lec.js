@@ -7,7 +7,8 @@ console.log("test");
 // // id
 //     var header = document.getElementById('main-title');
 //     console.log(header);
-
+//
+//
 // // class - will return an HTMLCollection
 //     var cards = document.getElementsByClassName('card');
 //     console.log(cards);
@@ -16,12 +17,18 @@ console.log("test");
 //     var cardsArr = Array.from(cards); // convert HTMLCollection and NodeList to Array
 //     cardsArr.pop();
 //     console.log(cardsArr);
-
-
+//
+//     for (var i = 0; i < cards.length; i += 1) {
+//         if (i == 2) {
+//             console.log(cards[i]);
+//         }
+//     }
+//
 //
 // // tag
 //     var sections = document.getElementsByTagName('section');
 //     console.log(sections);
+//     console.log(sections[2]);
 //
 //
 // // ========== Query Selector and Query Selector All
@@ -39,7 +46,6 @@ console.log("test");
 //     console.log(secondLi);
 //
 //
-//
 // // ========== Direct access to form inputs
 //
 //     var forms = document.forms;
@@ -50,7 +56,7 @@ console.log("test");
 //
 // // get value of innerHTML
 //     var title = document.getElementById("main-title");
-//     console.log(title);
+    // console.log(title);
 //
 //     console.log(title.innerHTML);
 //     console.log(title.innerText);
