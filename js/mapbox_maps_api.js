@@ -5,8 +5,8 @@ mapboxgl.accessToken = mapboxToken;
 var mapOptions = {
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: [-98.4809, 29.4949], // starting position [lng, lat]
-    zoom: 10, // starting zoom
+    center: [-98.5413, 29.5512], // starting position [lng, lat]
+    zoom: 11, // starting zoom
 
 }
 
