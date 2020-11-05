@@ -12,57 +12,73 @@ var mapOptions = {
 
 var map = new mapboxgl.Map(mapOptions);
 
-geocode("18747 Redland Rd, San Antonio, TX 78259", mapboxToken).then(function(result) {
+var hacienda = geocode("18747 Redland Rd, San Antonio, TX 78259", mapboxToken).then(function(result) {
     console.log(result);
-    map.flyTo(result);
     map.setZoom(10);
 
     // How to add marker with geocode result \\
-    new mapboxgl.Marker()
+    new mapboxgl.Marker(markerHaciendaOptions)
         .setLngLat(result)
         .setPopup(new mapboxgl.Popup().setHTML("<p>La Hacienda de Los Barrios</p> <p>18747 Redland Rd, San Antonio, TX 78259</p>"))
         .addTo(map);
 });
 
-geocode("15900 La Cantera Pkwy #21200, San Antonio, TX 78256", mapboxToken).then(function(result) {
+var markerHaciendaOptions = {
+    color: "#cf3a87",
+    zoom: 9,
+}
+
+var whiskey = geocode("15900 La Cantera Pkwy #21200, San Antonio, TX 78256", mapboxToken).then(function(result) {
     console.log(result);
-    map.flyTo(result);
     map.setZoom(10);
 
     // How to add marker with geocode result \\
-    new mapboxgl.Marker()
+    new mapboxgl.Marker(markerWhiskeyOptions)
         .setLngLat(result)
         .setPopup(new mapboxgl.Popup().setHTML("<p>Whiskey Cake Kitchen & Bar</p> <p>15900 La Cantera Pkwy #21200, San Antonio, TX 78256</p>"))
         .addTo(map);
 });
 
-geocode("5450 Babcock Rd #112, San Antonio, TX 78240", mapboxToken).then(function(result) {
+var markerWhiskeyOptions = {
+    color: "#3ead88",
+}
+
+var dallah = geocode("5450 Babcock Rd #112, San Antonio, TX 78240", mapboxToken).then(function(result) {
     console.log(result);
-    map.flyTo(result);
     map.setZoom(10);
 
     // How to add marker with geocode result \\
-    new mapboxgl.Marker()
+    new mapboxgl.Marker(markerDallahOptions)
         .setLngLat(result)
         .setPopup(new mapboxgl.Popup().setHTML("<p>Dallah Mediterranean Cuisine</p> <p>5450 Babcock Rd #112, San Antonio, TX 78240</p>"))
         .addTo(map);
 });
 
+var markerDallahOptions = {
+    color: "#d1b02e",
+}
+
 var restaurants = [
     {
         name: "La Hacienda de Los Barrios",
-        cuisineType: "Tex-Mex eatery",
-        address: "18747 Redland Rd, San Antonio, TX 78259"
+        info: {
+            cuisineType: "Tex-Mex eatery",
+            address: hacienda
+        }
     },
     {
         name: "Whiskey Cake Kitchen & Bar",
-        cuisineType: "Locally sourced farm-to-kitchen dishes",
-        address: "15900 La Cantera Pkwy #21200, San Antonio, TX 78256"
+        info: {
+            cuisineType: "Locally sourced farm-to-kitchen dishes",
+            address: whiskey
+        }
     },
     {
         name: "Dallah Mediterranean Cuisine",
-        cuisineType: "Mediterranean",
-        address: "5450 Babcock Rd #112, San Antonio, TX 78240"
+        info: {
+            cuisineType: "Mediterranean",
+            address: dallah
+        }
     }
 ]
 
