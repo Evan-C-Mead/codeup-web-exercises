@@ -44,7 +44,7 @@ var map = new mapboxgl.Map(mapOptions);
 
 var markerAlamo = new mapboxgl.Marker (markerAlamoOptions)
     .setLngLat([-98.4861, 29.4260])
-    .setPopup(new mapboxgl.Popup().setText("Remember The Alamo!"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>Remember The Alamo!</h6>"))
     .addTo(map);
 
 
@@ -85,6 +85,17 @@ var markerCodeup = new mapboxgl.Marker(markerCodeupOptions)
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup.
 //https://docs.mapbox.com/mapbox-gl-js/api/map/#map#setcenter
 
+geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxToken).then(function(result) {
+    console.log(result);
+    map.setCenter(result);
+    map.setZoom(20);
+
+    // How to add marker with geocode result \\
+    // new mapboxgl.Marker()
+    //     .setLngLat(result)
+    //     .addTo(map);
+});
+
 
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
@@ -95,3 +106,6 @@ var markerCodeup = new mapboxgl.Marker(markerCodeupOptions)
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -98.4861, lat: 29.4260} to get a physical address for the alamo
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
 
+reverseGeocode({lng: -98.4861, lat: 29.4260}, mapboxToken).then(function (result) {
+    console.log(result);
+});
