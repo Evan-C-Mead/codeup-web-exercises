@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<h1 class="header" id="h1-header">jQuery Header</h1>
+<h1 class="codeup" id="h1-header">jQuery Header</h1>
 
 <p class="paragraph" id="body-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores doloribus error eveniet explicabo incidunt molestias mollitia nihil numquam, saepe soluta velit. Animi, perferendis quis.</p>
 
-<h3 class="header" id="h3-header">This is an unordered list</h3>
+<h3 class="codeup" id="h3-header">This is an unordered list</h3>
 <ul class="unordered" id="ul-list">
     <li class="list-item" id="list-item-one">Item one in the list</li>
     <li class="list-item" id="list-item-two">Item two in the list</li>
@@ -19,7 +19,7 @@
     <li class="list-item" id="list-item-five">Item five in the list</li>
 </ul>
 
-<div class="body-div" id="div-one">This is the div...</div>
+<div class="codeup" id="div-one">This is the div...</div>
 
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -33,13 +33,12 @@
             alert( 'The DOM has finished loading!' );
         });
 
-        var alertH3 = $('#h3-header');
-        alert(alertH3);
-        alert(alertH3.text());
+        $('.codeup').css({
+            "border": "solid",
+            "border-color": "red",
+            "border-width": "1px"
+        })
 
-        var alertItem4 = $('#list-item-four');
-        alert(alertItem4);
-        alert(alertItem4.text());
     });
 
 </script>
