@@ -6,18 +6,34 @@
 </head>
 <body>
 
+<h1 class="codeup" id="h1-header">jQuery Header</h1>
+
+<p class="paragraph" id="body-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores doloribus error eveniet explicabo incidunt molestias mollitia nihil numquam, saepe soluta velit. Animi, perferendis quis.</p>
+
+<h3 class="codeup" id="h3-header">This is an unordered list</h3>
+<ul class="unordered" id="ul-list">
+    <li class="list-item" id="list-item-one">Item one in the list</li>
+    <li class="list-item" id="list-item-two">Item two in the list</li>
+    <li class="list-item" id="list-item-three">Item three in the list</li>
+    <li class="list-item" id="list-item-four">Item four in the list</li>
+    <li class="list-item" id="list-item-five">Item five in the list</li>
+</ul>
+
+<div class="codeup" id="div-one">This is the div...</div>
+
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
 
-    "use strict";
-
     $(document).ready(function() {
+        "use strict";
 
         // INSERT JAVASCRIPT CODE SAMPLE HERE
         $(document).ready(function() {
             alert( 'The DOM has finished loading!' );
         });
+
+        $('li, p, h1').css("background-color", "orange");
     });
 
 </script>
