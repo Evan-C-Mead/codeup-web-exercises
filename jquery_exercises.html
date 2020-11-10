@@ -33,24 +33,7 @@
             alert( 'The DOM has finished loading!' );
         });
 
-        $('li').css({
-            "font-size": "20px",
-            "background-color": "orange"
-
-        });
-
-        $('p').css({
-            "background-color": "orange",
-        });
-
-        $('h1').css({
-            "background-color": "orange",
-        });
-
-        var alertH1 = $('#h1-header');
-        alert(alertH1);
-        alert(alertH1.text());
-
+        $('li, p, h1').css("background-color", "orange");
     });
 
 </script>
