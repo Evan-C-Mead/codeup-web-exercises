@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+
+        let konamiKeys = {
+            38: 'up',
+            40: 'down',
+            37: 'left',
+            39: 'right',
+            65: 'a',
+            66: 'b',
+            13: 'enter'
+        }
+
+        // kCode as an array
+        let konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
+
+        // This is to remember the place of the kCode the user has input so far - defaults to start if incorrect
+        let codePosition = 0;
+
+        document.addEventListener('keyup', function (e) {
+
+            let accessKeys = konamiKeys[e.keyCode];
+            let requiredKey = konamiCode[codePosition];
+
+            function kCodeEngage() {
+                document.body.style.backgroundImage = "url('media/toasty.gif')";
+
+                let audio = new Audio('media/toasty.mp3');
+                audio.play();
+
+                alert("You have added 30 lives!");
+            }
+
+            if (accessKeys === requiredKey) {
+
+                // Move to the next key in the kCode sequence
+                codePosition++;
+
+                // If the last key is reached, activate cheats
+                if (codePosition === konamiCode.length) {
+                    kCodeEngage();
+                    codePosition = 0;
+                }
+            } else {
+                codePosition = 0;
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>
