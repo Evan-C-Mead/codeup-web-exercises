@@ -33,9 +33,20 @@
             alert( 'The DOM has finished loading!' );
         });
 
-        $('li, p, h1').css("background-color", "orange").css("list-style", "none");
-        $('#list-item-two, #list-item-four').css("font-size", "20px");
-        $('h1').css("text-decoration", "underline");
+        $('h1').click(function () {
+            $('h1').css('background', 'blue');
+        });
+
+        $('p').dblclick(function() {
+            $('p').css('font-size', '18px');
+        });
+
+        $('li').hover(function() {
+            $(this).css('color', 'red');
+        }, function() {
+            $(this).css('color', 'black');
+        });
+
     });
 
 </script>
