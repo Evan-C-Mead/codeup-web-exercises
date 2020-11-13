@@ -9,6 +9,10 @@
     .invisible {
         visibility: hidden;
     }
+
+    .highlight {
+        background-color: greenyellow;
+    }
 </style>
 
 <body>
@@ -60,6 +64,9 @@
             $('dd').toggleClass('invisible');
         });
 
+        $('dt').click(function() {
+            $(this).toggleClass('highlight');
+        });
     });
 
 </script>
