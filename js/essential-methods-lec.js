@@ -174,8 +174,8 @@ $(document).ready(function() {
 
     //BONUS: .prev() method
 
-    // $('ul').click(function(e){
-    //     $(this).prev().addClass('gryffindor');
-    // });
+    $('ul').click(function(e){
+        $(this).prev().addClass('gryffindor');
+    });
 
 });
