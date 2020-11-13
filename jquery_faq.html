@@ -138,16 +138,21 @@
         });
 
         $('#parks-button').click(function () {
-            $('.parks').children().last().toggleClass('colorYellow');
-            console.log($('.parks').children());
+            $('ul').each(function () {
+                $(this).children(':last').toggleClass('colorYellow');
+            });
         });
 
         $('.class-header').click(function () {
-            $('li').toggleClass('bold')
+            $('li').each(function () {
+                $(this).parent().children().toggleClass('bold');
+            });
         });
 
         $('li').click(function () {
-            $('.parks').children().first().toggleClass('colorBlue');
+            $('.parks').each(function () {
+                $(this).children(':first').toggleClass('colorBlue');
+            });
         });
     });
 
