@@ -40,10 +40,6 @@ $(document).ready(function() {
     var mainHeading = $('#main-heading').html();
     console.log(mainHeading);
 
-    $('#main-heading').click(function () {
-        $(this).html('Hogwarts');
-    });
-
     // TODO: uncomment the line below
 
     alert(mainHeading);
@@ -60,6 +56,7 @@ $(document).ready(function() {
     //    How can font size be changed using .html()?
 
     $('#main-heading').click(function () {
+        $(this).html('Hogwarts');
         $(this).css('font-size', '75px');
     })
     // TODO: Using a css method, change the banner background-color to black
@@ -73,11 +70,23 @@ $(document).ready(function() {
 
     // TODO TOGETHER: When the 'Houses' button is clicked, add the class 'house' to anything with a class of 'house-name'
 
+    // $('#highlight-houses').click(function () {
+    //     $('.house-name').addClass('house');
+    // })
+
     // TODO TOGETHER: Comment out the code above. Add the class of 'house' to all the 'house-names'
+
+    // $('#highlight-houses').click(function () {
+    //     $('.house-name').removeClass('house');
+    // })
 
     // TODO: Write the event listener to remove the class instead
 
     // TODO TOGETHER: Refactor your addClass and removeClass methods to toggle the 'house' class instead
+
+    $('#highlight-houses').click(function () {
+        $('.house-name').toggleClass('house');
+    })
 
     // This provides the 'Lock In' functionality. Selected my button -> add an event listener
     $('#lock-g').click(function(e){
@@ -104,6 +113,24 @@ $(document).ready(function() {
 
     //TODO TOGETHER: complete the Lock In functionality for Slytherin
     //TODO: Add the Lock In functionality for Ravenclaw and Hufflepuff
+
+    $('#lock-r').click(function(e) {
+        $('#ravenclaw-house').toggleClass('ravenclaw');
+        if($('#ravenclaw-house').hasClass('ravenclaw')){
+            $(this).text('Unlock');
+        }else {
+            $(this).text('Lock In');
+        }
+    });
+
+    $('#lock-h').click(function(e) {
+        $('#hufflepuff-house').toggleClass('hufflepuff');
+        if($('#hufflepuff-house').hasClass('hufflepuff')){
+            $(this).text('Unlock');
+        }else {
+            $(this).text('Lock In');
+        }
+    });
 
     /**********************************************
      * 			       Traversing
