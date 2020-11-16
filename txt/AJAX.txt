@@ -1,0 +1,20 @@
+What is AJAX and what is it used for?
+-AJAX stands for Asynchronous JavaScript and XML. AJAX was originally intended to work with XML coming back from the server, but this does not mean you must serve up XML for the requests. AJAX is a group of interrelated Web development techniques used on the client-side to create asynchronous web applications. With AJAX, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page.
+
+What is JSON and what is it used for?
+-JavaScript Object Notation (JSON) is a data-interchange format that is easy for humans to read and write. It is widely used in cloud based services and web application programming interfaces (APIs).
+
+Can methods be included in a JSON file?
+-No. functions are undefined in JSON results.
+
+What does ‘jqXhr’ represent in the curriculum AJAX examples?
+-It replaces the browser native XMLHttpRequest object. jQuery wraps the browser native XMLHttpRequest object with a superset API.
+
+What’s the difference between $.ajax() and $.get()?
+-$.get() is just a shorthand for $.ajax() but abstracts some of the configurations away, setting reasonable default values for what it hides from you. Returns the data to a callback. It only allows GET-requests so is accompanied by the $.post() function for similar abstraction, only for POST.
+
+Is jQuery required to make AJAX requests?
+-It's not needed but may make sites act up in separate browsers.
+
+(optional) What possible real world example can you think of where AJAX might be used?
+-Slider bars, date calculators, rating, reviews/suggestions
