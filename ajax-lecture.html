@@ -43,11 +43,14 @@
         //     console.log(data);
         //     console.log(data.eye_color);
         //     console.log(data.vehicles[0]);
+        //     console.log(data.created);
         // });
 
-        $.ajax('data/orders.json').done(function (data) {
-            console.log(data[2].itemOrdered);
-        });
+        // $.ajax('data/orders.json').done(function (data) {
+        //     console.log(data[2].itemOrdered);
+        //     console.log(data[0]);
+        //     console.log(data[1].orderNumber);
+        // });
 
         // $.ajax('./data/orders.json'); // jQuery request object
         //
@@ -61,7 +64,7 @@
         //         responseData = data;
         //     }); // .done()
         //
-        //     console.log(responseData);
+            // console.log(responseData);
 
         // simple API request
 
@@ -79,7 +82,7 @@
         //         "search": "A New Hope"
         //     }
         // }).done(function(data, status, jqXhr) {
-        //     // console.log(status);
+        //     console.log(status);
         //     console.log(data);
         //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
         // }).fail(function(jqXhr, status, error) {
@@ -103,18 +106,22 @@
 
         // Storing returned jQuery XML HTTP Response object
 
-        // var jqXhr = $.ajax("https://swapi.dev/api/films", {
-        //     "type": "GET",
-        //     "data": {
-        //         "search": "A New Hope"
-        //     }
-        // });
-        //
-        // console.log(jqXhr);
-        //
-        // jqXhr.done(function(data) {
-        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
-        // });
+        var jqXhr = $.ajax("https://swapi.dev/api/films", {
+            "type": "GET",
+            "data": {
+                "search": "A New Hope"
+            }
+        });
+
+        console.log(jqXhr);
+
+        jqXhr.done(function(data) {
+            console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+        });
+
+        jqXhr.fail(function (data, status, error) {
+            console.log(status);
+        });
 
 
         // GET short-hand method
