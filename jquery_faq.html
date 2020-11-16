@@ -30,9 +30,9 @@
 
 <body>
 
-<div>
+<div class="top-div">
     <h1>Would you like to sign up for our newsletter?</h1>
-    <span style="font-weight:bold">
+    <span class="clear-out" style="font-weight:bold">
         X
     </span>
 </div>
@@ -161,6 +161,21 @@
                 $(this).children(':first').toggleClass('colorBlue');
             });
         });
+
+        $('.clear-out').click(function () {
+            $('.top-div').toggleClass('invisible');
+        });
+
+        $('.parks').addClass('invisible');
+
+        $('.class-header').click(function () {
+            $('.parks').toggleClass('invisible');
+        });
+
+        setTimeout (function(){
+            $('body').prepend('<h2>Please register for our site!</h2>')
+        }, 8000);
+
     });
 
 </script>
