@@ -11,7 +11,12 @@
   },
   {
     "orderNumber": 3,
-    "itemOrdered": "Huge Hat",
+    "itemOrdered": "Large Hat",
     "orderedBy": "Ronnie"
+  },
+  {
+    "orderNumber": 4,
+    "itemOrdered": "Short Pants",
+    "orderedBy": "Elrond"
   }
 ]
