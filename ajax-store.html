@@ -26,8 +26,9 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button type="button" class="btn btn-dark" id="refresh-table">Refresh</button>
-
+<div>
+    <button type="button" class="btn btn-dark" id="refresh-table">Refresh</button>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -68,7 +69,7 @@
                 productHTML += "<tr>";
                 productHTML += "<td>" + product.title + "</td>";
                 productHTML += "<td>" + product.quantity + "</td>";
-                productHTML += "<td>" + product.price + "</td>";
+                productHTML += "<td>" + "$" + product.price + "</td>";
                 productHTML += "<td>" + product.categories + "</td>";
                 productHTML += "</tr>";
                 productHTML += "</thead>";
