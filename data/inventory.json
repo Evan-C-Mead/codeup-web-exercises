@@ -30,5 +30,21 @@
     "tool"
   ],
   "price": 10
+},{
+  "title": "Saw",
+  "quantity": 15,
+  "categories": [
+    "tool",
+    "hand"
+  ],
+  "price": 30
+},{
+  "title": "Glue",
+  "quantity": 30,
+  "categories": [
+    "tool",
+    "adhesive"
+  ],
+  "price": 10
 }
 ]
