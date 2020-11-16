@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
+
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container-fluid" id="posts">
+    <section>
+        <h3>Title: </h3>
+        <dl>
+            <dt>Content</dt>
+            <dd>Category</dd>
+            <dt>Date</dt>
+        </dl>
+    </section>
+</div>
+
+<button type="button" class="btn btn-dark" id="refresh-blog">Refresh</button>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function() {
+        "use strict";
+
+        var ajaxRequest = $.ajax("data/blog.json");
+
+        function updatePage() {
+            ajaxRequest.done(function(data, status, jqXhr) {
+                console.log(data);
+                buildBlog(data);
+            });
+
+            ajaxRequest.fail(function(jqXhr, status, error) {
+                console.log(jqXhr); // jQuery XMLHttpRequest object
+                console.log(status);
+                console.log(error);
+            });
+        }
+
+        function buildBlog(posts) {
+            var postHTML = "";
+
+            posts.forEach(function(post) {
+                postHTML += "<div>"
+                postHTML += "<section>";
+                postHTML += "<h3>" + "Title: " + post.title + "</h3>";
+                postHTML += "<dl>";
+                postHTML += "<dt>" + "Category" + "</dt>";
+                postHTML += "<dd>" + post.categories + "</dd>";
+                postHTML += "<dt>" + "Date" + "</dt>";
+                postHTML += "<dd>" + post.date + "</dd>";
+                postHTML += "</dl>";
+                postHTML += "</section>";
+                postHTML += "</div>";
+            });
+
+            $('#posts').html(postHTML);
+        }
+
+        $('#refresh-blog').click(updatePage);
+
+    })();
+</script>
+
+</body>
+</html>
