@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
+
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table class="table table-dark" id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button type="button" class="btn btn-dark" id="refresh-table">Refresh</button>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+        var ajaxRequest = $.ajax("data/inventory.json");
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+
+        function updatePage() {
+
+            var ajaxRequest = $.ajax("data/inventory.json");
+
+            ajaxRequest.done(function(data, status, jqXhr) {
+                console.log(data);
+                buildObject(data);
+            });
+
+            ajaxRequest.fail(function(jqXhr, status, error) {
+                console.log(jqXhr); // jQuery XMLHttpRequest object
+                console.log(status);
+                console.log(error);
+            });
+        }
+
+        function buildObject(products) {
+            var productHTML = "";
+
+            products.forEach(function(product) {
+                productHTML += "<table>";
+                productHTML += "<thead>";
+                productHTML += "<tr>";
+                productHTML += "<td>" + product.title + "</td>";
+                productHTML += "<td>" + product.quantity + "</td>";
+                productHTML += "<td>" + product.price + "</td>";
+                productHTML += "<td>" + product.categories + "</td>";
+                productHTML += "</tr>";
+                productHTML += "</thead>";
+                productHTML += "</table>";
+            });
+
+            $('#insertProducts').html(productHTML);
+        }
+
+        $('#refresh-table').click(updatePage);
+
+    })();
+</script>
+
+</body>
+</html>
