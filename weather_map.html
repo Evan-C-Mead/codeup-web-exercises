@@ -16,10 +16,23 @@
 
     <style>
 
+        .card-weather {
+            margin: 0.5em;
+        }
+
     </style>
 
 </head>
 <body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
+<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
 <nav class="navbar navbar-primary bg-primary" id="top-nav">
     <a class="navbar-brand">5-Day Forecast</a>
@@ -29,11 +42,11 @@
     </form>
 </nav>
 
-<div class="container-fluid mb-4" id="weather-cards">
+<div class="container-fluid mt-3 mb-3" id="weather-cards">
     <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -42,7 +55,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -51,7 +64,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -60,7 +73,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -69,7 +82,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -111,13 +124,23 @@
 
         var map = new mapboxgl.Map(mapOptions);
 
-        var marker = new mapboxgl.Marker(drag)
-            .setLngLat([-98.4861, 29.4260])
-            .addTo(map);
+        map.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl,
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+                center: [-98.4916, 29.4252], // starting position [lng, lat]
+                zoom: 10, // starting zoom
+            })
+        );
 
-        var drag = {
-            draggable: true
-        }
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-98.4861, 29.4260])
+            .addTo(map)
+            .setDraggable(true);
+
+
 
         // $.get("https://api.openweathermap.org/data/2.5/onecall", {
         //     APPID: OPEN_WEATHER_APPID,
