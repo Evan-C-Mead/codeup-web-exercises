@@ -6,8 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
-
-    <title>Blog</title>
+    <title>The Blogs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -62,7 +61,7 @@
 <div class="fixed-top">
     <nav class="navbar navbar-dark bg-dark">
         <ul class="nav" id="top-nav">
-            <a class="navbar-logo" href="#"><img src="https://randomuser.me/api/portraits/lego/7.jpg" width="50" height="50" alt="logo"></a>
+            <li class="navbar-logo" href="#"><img src="https://randomuser.me/api/portraits/lego/7.jpg" width="50" height="50" alt="logo"></li>
             <li class="nav-item" id="top-nav-item-1"><a class="nav-link text-warning" href="#"><i class="fas fa-home"></i></a></li>
             <li class="nav-item" id="top-nav-item-2"><a class="nav-link text-info" href="#"><i class="fas fa-images"></i></a></li>
             <li class="nav-item" id="top-nav-item-3"><a class="nav-link text-warning" href="#"><i class="fas fa-bell" id="notification"></i></a></li>
@@ -101,28 +100,27 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/jquery-2.2.4.js"></script>
 
 <script>
     (function () {
         "use strict";
 
-        var ajaxRequest = $.ajax("data/blog.json");
+        let ajaxRequest = $.ajax("data/blog.json");
 
         function updatePage() {
             ajaxRequest.done(function (data) {
                 console.log(data);
                 buildBlog(data);
             });
-
             ajaxRequest.fail(function (error) {
                 console.log(error);
             });
         }
 
         function buildBlog(posts) {
-            var postHTML = "";
+
+            let postHTML = "";
 
             posts.forEach(function (post) {
                 postHTML += "<div class=\"container-fluid\" id=\"posts\">"
@@ -141,12 +139,9 @@
                 postHTML += "</div>";
                 postHTML += "</div>";
             });
-
             $('#posts').html(postHTML);
         }
-
         $('#update-blog').click(updatePage);
-
     })();
 </script>
 
