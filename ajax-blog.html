@@ -29,6 +29,12 @@
             color: firebrick;
         }
 
+        #info-card {
+            position: absolute;
+            top: 160px;
+            right: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -52,17 +58,14 @@
     </div>
 </div>
 
-<div class="container-fluid" id="posts">
-    <div class="row">
-        <div class="col-10" id="blog-col">
-            <div class="card" id="blog-card">
-                <img src="https://picsum.photos/1200/300" alt="cover-image">
-                <div class="card-body">
-                    <h3 class="card-title">Title: </h3>
-                    <p class="card-text">Content</p>
-                    <p class="card-text">Category</p>
-                    <p class="card-text">Date</p>
-                </div>
+<div class="container-fluid" id="posts"></div>
+
+<div class="row">
+    <div class="col-2" id="info-card">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">About this blogger</h3>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur eligendi fugit impedit quaerat quasi temporibus. Aperiam, assumenda corporis expedita illo iure numquam quos sint velit voluptatem voluptates. Ab alias aliquid asperiores assumenda deleniti dolor doloribus earum expedita, explicabo in, iure natus nisi omnis perspiciatis quasi sequi veritatis voluptas voluptatibus.</p>
             </div>
         </div>
     </div>
@@ -78,14 +81,12 @@
         var ajaxRequest = $.ajax("data/blog.json");
 
         function updatePage() {
-            ajaxRequest.done(function (data, status, jqXhr) {
+            ajaxRequest.done(function (data) {
                 console.log(data);
                 buildBlog(data);
             });
 
-            ajaxRequest.fail(function (jqXhr, status, error) {
-                console.log(jqXhr); // jQuery XMLHttpRequest object
-                console.log(status);
+            ajaxRequest.fail(function (error) {
                 console.log(error);
             });
         }
@@ -101,10 +102,9 @@
                 postHTML += "<img src=\"https://picsum.photos/1200/300\" alt=\"cover-image\">";
                 postHTML += "<div class=\"card-body\">";
                 postHTML += "<h3 class=\"card-title\">" + post.title + "</h3>";
-                postHTML += "<p class=\"card-text\">" + "Category" + "</p>";
-                postHTML += "<p class=\"card-text\">" + post.categories + "</p>";
-                postHTML += "<p class=\"card-text\">" + "Date" + "</p>";
+                postHTML += "<p class=\"card-text\">" + "Category: " + post.categories + "</p>";
                 postHTML += "<p class=\"card-text\">" + post.date + "</p>";
+                postHTML += "<p class=\"card-text\">" + post.content + "</p>";
                 postHTML += "</div>";
                 postHTML += "</div>";
                 postHTML += "</div>";
