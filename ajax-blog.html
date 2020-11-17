@@ -15,6 +15,10 @@
             background-color: darkgoldenrod;
         }
 
+        #top-nav-button {
+            margin-top: 5px;
+        }
+
         #posts {
             padding: 10px;
             height: 75%;
@@ -23,10 +27,6 @@
         #main-jumbotron {
             margin-bottom: 0;
             padding-bottom: 0;
-        }
-
-        #notification {
-            color: firebrick;
         }
 
         #info-card {
@@ -59,15 +59,20 @@
 <body>
 
 <div class="fixed-top">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
         <ul class="nav" id="top-nav">
             <li class="navbar-logo" href="#"><img src="https://randomuser.me/api/portraits/lego/7.jpg" width="50" height="50" alt="logo"></li>
             <li class="nav-item" id="top-nav-item-1"><a class="nav-link text-warning" href="#"><i class="fas fa-home"></i></a></li>
             <li class="nav-item" id="top-nav-item-2"><a class="nav-link text-info" href="#"><i class="fas fa-images"></i></a></li>
-            <li class="nav-item" id="top-nav-item-3"><a class="nav-link text-warning" href="#"><i class="fas fa-bell" id="notification"></i></a></li>
-            <li class="nav-item" id="top-nav-item-4"><a class="nav-link text-success" href="#"><i class="fas fa-user-cog"></i></a></li>
+            <li class="nav-item" id="top-nav-item-3"><a class="nav-link text-light" href="#"><i class="fas fa-comments"></i></a></li>
+            <li class="nav-item" id="top-nav-item-4"><a class="nav-link text-danger" href="#"><i class="fas fa-bell"></i></a></li>
+            <li class="nav-item" id="top-nav-item-5"><a class="nav-link text-success" href="#"><i class="fas fa-user-cog"></i></a></li>
+            <li class="nav-item" id="top-nav-button"><button type="button" class="btn btn-sm btn-outline-info float-left" id="update-blog">Update Blog</button></li>
         </ul>
-        <button type="button" class="btn btn-sm btn-outline-info" id="update-blog">Update Blog</button>
+        <form class="form-inline">
+            <input class="form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-sm btn-outline-info" type="submit">Let's go!</button>
+        </form>
     </nav>
 </div>
 
@@ -77,7 +82,21 @@
     </div>
 </div>
 
-<div class="container-fluid" id="posts"></div>
+<div class="container-fluid" id="posts">
+    <div class="row">
+        <div class="col-10">
+            <div class="card">
+                <img src="https://picsum.photos/id/1035/1200/300" alt="cover-image">
+                <div class="card-body">
+                    <h3 class="card-title">Design your blog cards!</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, temporibus.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque facere harum impedit laboriosam nam, sunt?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-2 sm-2" id="info-card">
