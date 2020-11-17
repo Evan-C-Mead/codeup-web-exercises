@@ -18,6 +18,7 @@
 
         #posts {
             padding: 10px;
+            height: 75%;
         }
 
         #main-jumbotron {
@@ -33,6 +34,24 @@
             position: absolute;
             top: 160px;
             right: 10px;
+        }
+
+        #links-card {
+            position: absolute;
+            top: 975px;
+            right: 10px;
+        }
+
+        .card-body {
+            background-color: whitesmoke;
+        }
+
+        .card-body > a {
+            color: black;
+            text-decoration: none;
+        }
+        .card-body > a:hover {
+            color: darkolivegreen;
         }
 
     </style>
@@ -61,11 +80,21 @@
 <div class="container-fluid" id="posts"></div>
 
 <div class="row">
-    <div class="col-2" id="info-card">
+    <div class="col-2 sm-2" id="info-card">
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">About this blogger</h3>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur eligendi fugit impedit quaerat quasi temporibus. Aperiam, assumenda corporis expedita illo iure numquam quos sint velit voluptatem voluptates. Ab alias aliquid asperiores assumenda deleniti dolor doloribus earum expedita, explicabo in, iure natus nisi omnis perspiciatis quasi sequi veritatis voluptas voluptatibus.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-2 sm-2" id="links-card">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">This blogger's favorite links:</h3>
+                <a class="card-text" href="https://theawesomer.com">The Awesomer</a>
+                <a class="card-text " href="https://deadreckoningco.com">Dead Reckoning Collective</a>
+                <a class="card-text" href="https://www.mau5trap.tv/home-page">mau5trap.tv</a>
             </div>
         </div>
     </div>
