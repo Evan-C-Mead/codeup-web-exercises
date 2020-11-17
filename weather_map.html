@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
+
+    <title>Weather Map</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-primary bg-primary" id="top-nav">
+    <a class="navbar-brand">5-Day Forecast</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="update-weather">Search</button>
+    </form>
+</nav>
+
+<div class="container-fluid mb-4" id="weather-cards">
+    <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
+        <div class="col-mt-5">
+            <div class="card text-center card-weather">
+                <div class="card-header">Featured</div>
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-mt-5">
+            <div class="card text-center card-weather">
+                <div class="card-header">Featured</div>
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-mt-5">
+            <div class="card text-center card-weather">
+                <div class="card-header">Featured</div>
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-mt-5">
+            <div class="card text-center card-weather">
+                <div class="card-header">Featured</div>
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-mt-5">
+            <div class="card text-center card-weather">
+                <div class="card-header">Featured</div>
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="map" style="width: 100%; height: 700px;"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        "use strict";
+
+        mapboxgl.accessToken = mapboxToken;
+
+        var mapOptions = {
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-98.4916, 29.4252], // starting position [lng, lat]
+            zoom: 10, // starting zoom
+        }
+
+        var map = new mapboxgl.Map(mapOptions);
+
+        var marker = new mapboxgl.Marker(drag)
+            .setLngLat([-98.4861, 29.4260])
+            .addTo(map);
+
+        var drag = {
+            draggable: true
+        }
+
+        // $.get("https://api.openweathermap.org/data/2.5/onecall", {
+        //     APPID: OPEN_WEATHER_APPID,
+        //     lat: 29.423017,
+        //     lon: -98.48527,
+        //     units: "imperial",
+        //     exclude: "minutely,hourly,alerts"
+        // }).done(function (data) {
+        //     console.log(data);
+        // });
+
+
+        let getRequest = $.get("https://api.openweathermap.org/data/2.5/weather", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: 42.3601,
+            lon: -71.0589,
+            units: "imperial",
+            exclude: "minutely,hourly,alerts"
+        }).done(function (data) {
+            console.log(data);
+        });
+
+        function updateWeather() {
+            getRequest.done(function (data) {
+                console.log(data);
+                buildWeather(data);
+            });
+            getRequest.fail(function (error) {
+                console.log(error);
+            });
+        }
+
+        function buildWeather(cards) {
+
+            let postHTML = "";
+
+            cards.forEach(function (card) {
+                postHTML += "<div class=\"card-body\">";
+                postHTML += "<h5 class=\"card-title\">" + card.data + "</h5>";
+            });
+            $('#weather-cards').html(postHTML);
+        }
+        $('#update-weather').click(updateWeather);
+
+    });
+
+
+</script>
+
+</body>
+</html>
