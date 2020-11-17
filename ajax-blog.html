@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/1158dfb1c4.js" crossorigin="anonymous"></script>
+
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        body {
+            background-color: darkgoldenrod;
+        }
+
+        #posts {
+            padding: 10px;
+            height: 75%;
+        }
+
+        #main-jumbotron {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        #notification {
+            color: firebrick;
+        }
+
+        #info-card {
+            position: absolute;
+            top: 160px;
+            right: 10px;
+        }
+
+        #links-card {
+            position: absolute;
+            top: 970px;
+            right: 10px;
+        }
+
+        .card-body {
+            background-color: whitesmoke;
+        }
+
+        .card-body > a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .card-body > a:hover {
+            color: darkolivegreen;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="fixed-top">
+    <nav class="navbar navbar-dark bg-dark">
+        <ul class="nav" id="top-nav">
+            <a class="navbar-logo" href="#"><img src="https://randomuser.me/api/portraits/lego/7.jpg" width="50" height="50" alt="logo"></a>
+            <li class="nav-item" id="top-nav-item-1"><a class="nav-link text-warning" href="#"><i class="fas fa-home"></i></a></li>
+            <li class="nav-item" id="top-nav-item-2"><a class="nav-link text-info" href="#"><i class="fas fa-images"></i></a></li>
+            <li class="nav-item" id="top-nav-item-3"><a class="nav-link text-warning" href="#"><i class="fas fa-bell" id="notification"></i></a></li>
+            <li class="nav-item" id="top-nav-item-4"><a class="nav-link text-success" href="#"><i class="fas fa-user-cog"></i></a></li>
+        </ul>
+        <button type="button" class="btn btn-sm btn-outline-info" id="update-blog">Update Blog</button>
+    </nav>
+</div>
+
+<div class="jumbotron jumbotron-fluid" id="main-jumbotron">
+    <div class="container">
+        <h1 class="display-4 text-black-50 text-right align-content-center">The Blogs</h1>
+    </div>
+</div>
+
+<div class="container-fluid" id="posts"></div>
+
+<div class="row">
+    <div class="col-2 sm-2" id="info-card">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">About this blogger</h3>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur eligendi fugit impedit quaerat quasi temporibus. Aperiam, assumenda corporis expedita illo iure numquam quos sint velit voluptatem voluptates. Ab alias aliquid asperiores assumenda deleniti dolor doloribus earum expedita, explicabo in, iure natus nisi omnis perspiciatis quasi sequi veritatis voluptas voluptatibus.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-2 sm-2" id="links-card">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">This blogger's favorite links:</h3>
+                <a class="card-text" href="https://theawesomer.com">The Awesomer</a>
+                <a class="card-text " href="https://deadreckoningco.com">Dead Reckoning Collective</a>
+                <a class="card-text" href="https://www.mau5trap.tv/home-page">mau5trap.tv</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function () {
+        "use strict";
+
+        var ajaxRequest = $.ajax("data/blog.json");
+
+        function updatePage() {
+            ajaxRequest.done(function (data) {
+                console.log(data);
+                buildBlog(data);
+            });
+
+            ajaxRequest.fail(function (error) {
+                console.log(error);
+            });
+        }
+
+        function buildBlog(posts) {
+            var postHTML = "";
+
+            posts.forEach(function (post) {
+                postHTML += "<div class=\"container-fluid\" id=\"posts\">"
+                postHTML += "<div class=\"row\">";
+                postHTML += "<div class=\"col-10\">";
+                postHTML += "<div class=\"card\">";
+                postHTML += "<img src=\"https://picsum.photos/1200/300\" alt=\"cover-image\">";
+                postHTML += "<div class=\"card-body\">";
+                postHTML += "<h3 class=\"card-title\">" + post.title + "</h3>";
+                postHTML += "<p class=\"card-text\">" + "Category: " + post.categories + "</p>";
+                postHTML += "<p class=\"card-text\">" + post.date + "</p>";
+                postHTML += "<p class=\"card-text\">" + post.content + "</p>";
+                postHTML += "</div>";
+                postHTML += "</div>";
+                postHTML += "</div>";
+                postHTML += "</div>";
+                postHTML += "</div>";
+            });
+
+            $('#posts').html(postHTML);
+        }
+
+        $('#update-blog').click(updatePage);
+
+    })();
+</script>
+
+</body>
+</html>
