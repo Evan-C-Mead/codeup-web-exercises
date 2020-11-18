@@ -12,26 +12,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
 
     <style>
 
         .card-weather {
             margin: 0.5em;
-        }
-
-        .coordinates {
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            position: absolute;
-            bottom: 40px;
-            left: 10px;
-            padding: 5px 10px;
-            margin: 0;
-            font-size: 11px;
-            line-height: 18px;
-            border-radius: 3px;
-            display: none;
         }
 
     </style>
@@ -48,8 +34,8 @@
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
-<nav class="navbar navbar-primary bg-primary" id="top-nav">
-    <a class="navbar-brand">5-Day Forecast</a>
+<nav class="navbar navbar-primary text-center bg-primary" id="top-nav">
+    <a class="navbar-brand">Weather Forecast</a>
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="update-weather">Search</button>
@@ -57,59 +43,56 @@
 </nav>
 
 <div class="container-fluid mt-3 mb-3" id="weather-cards">
-    <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
-
 <div id="map" style="width: 100%; height: 700px;"></div>
-<pre id="coordinates" class="coordinates"></pre>
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -157,23 +140,11 @@
 
         function onDragEnd() {
             var lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML =
-                'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            fiveDayForecast(marker.getLngLat());
+            console.log(marker.getLngLat());
         }
 
         marker.on('dragend', onDragEnd);
-        console.log(onDragEnd);
-
-        function updateWeather() {
-            getRequest.done(function (data) {
-                console.log(data);
-                buildWeather(data);
-            });
-            getRequest.fail(function (error) {
-                console.log(error);
-            });
-        }
 
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: OPEN_WEATHER_APPID,
@@ -185,30 +156,61 @@
             console.log(data);
         });
 
-
-        function buildWeather(cards) {
-
-            var postHTML = "";
-
-            cards.forEach(function (card) {
-
-            });
-        }
-
-        function fiveDayForecast (city) {
+        function fiveDayForecast(lngLat) {
             $.get("https://api.openweathermap.org/data/2.5/onecall", {
                 APPID: OPEN_WEATHER_APPID,
-                q: "${city}, US",
+                lat: lngLat.lat,
+                lon: lngLat.lng,
                 units: "imperial",
                 exclude: "minutely,hourly,alerts"
             }).done(function (data) {
                 console.log(data);
+                buildWeather(data);
             });
         }
 
+        function buildWeather(cards) {
+            console.log(cards.daily);
+            var postHTML = ``;
+
+            cards.daily.forEach(function (card) {
+
+                var date = card.dt * 1000;
+                var newDate = new Date(date);
+
+                postHTML += `<div class="container-fluid mt-3 mb-3" id="weather-cards">
+                                <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
+                                    <div class="col-mt-5">
+                                        <div class="card text-center card-weather">
+                                            <div class="card-header">${newDate.toLocaleString()}</div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Day: ${card.temp.day}&#176; F</h5>
+                                                <h5 class="card-title">Night: ${card.temp.night}&#176; F</h5>
+                                                <p class="card-text"> Humidity: ${card.humidity}%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+            });
+
+            $('#weather-cards').html(postHTML);
+        }
+
+        function updateWeather() {
+            getRequest.done(function (data) {
+                console.log(data);
+                buildWeather(data);
+            });
+            getRequest.fail(function (error) {
+                console.log(error);
+            });
+        }
+
+        updateWeather();
+
     });
-
-
 </script>
 
 </body>
