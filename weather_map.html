@@ -20,20 +20,6 @@
             margin: 0.5em;
         }
 
-        .coordinates {
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            position: absolute;
-            bottom: 40px;
-            left: 10px;
-            padding: 5px 10px;
-            margin: 0;
-            font-size: 11px;
-            line-height: 18px;
-            border-radius: 3px;
-            display: none;
-        }
-
     </style>
 
 </head>
@@ -48,8 +34,8 @@
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
-<nav class="navbar navbar-primary bg-primary" id="top-nav">
-    <a class="navbar-brand">5-Day Forecast</a>
+<nav class="navbar navbar-primary text-center bg-primary" id="top-nav">
+    <a class="navbar-brand">Weather Forecast</a>
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="update-weather">Search</button>
@@ -57,53 +43,53 @@
 </nav>
 
 <div class="container-fluid mt-3 mb-3" id="weather-cards">
-    <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Temp</h5>
-                    <p class="card-text">Weather Info</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Temp</h5>
-                    <p class="card-text">Weather Info</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Temp</h5>
-                    <p class="card-text">Weather Info</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Temp</h5>
-                    <p class="card-text">Weather Info</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-mt-5">
-            <div class="card text-center card-weather">
-                <div class="card-header">Day</div>
-                <div class="card-body">
-                    <h5 class="card-title">Temp</h5>
-                    <p class="card-text">Weather Info</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-mt-5">-->
+<!--            <div class="card text-center card-weather">-->
+<!--                <div class="card-header">Day</div>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">Temp</h5>-->
+<!--                    <p class="card-text">Weather Info</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 <div id="map" style="width: 100%; height: 700px;"></div>
@@ -190,18 +176,22 @@
             cards.daily.forEach(function (card) {
 
                 var date = card.dt * 1000;
-                var newDate = new Date();
+                var newDate = new Date(date);
 
-                postHTML += `<div class="col-mt-5">
-                                <div class="card text-center card-weather">
-                                    <div class="card-header">${newDate.toLocaleString()}</div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Day: ${card.temp.day}&#176; F</h5>
-                                        <h5 class="card-title">Night: ${card.temp.night}&#176; F</h5>
-                                        <p class="card-text"> Humidity: ${card.humidity}%</p>
+                postHTML += `<div class="container-fluid mt-3 mb-3" id="weather-cards">
+                                <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
+                                    <div class="col-mt-5">
+                                        <div class="card text-center card-weather">
+                                            <div class="card-header">${newDate.toLocaleString()}</div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Day: ${card.temp.day}&#176; F</h5>
+                                                <h5 class="card-title">Night: ${card.temp.night}&#176; F</h5>
+                                                <p class="card-text"> Humidity: ${card.humidity}%</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                             </div>
+                            </div>
                             `
             });
 
@@ -218,13 +208,9 @@
             });
         }
 
-        $('#update-weather').click(updateWeather);
-
         updateWeather();
 
     });
-
-
 </script>
 
 </body>
