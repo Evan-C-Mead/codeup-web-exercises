@@ -16,10 +16,37 @@
 
     <style>
 
+        .card-weather {
+            margin: 0.5em;
+        }
+
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
+
     </style>
 
 </head>
 <body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
+<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
 <nav class="navbar navbar-primary bg-primary" id="top-nav">
     <a class="navbar-brand">5-Day Forecast</a>
@@ -29,11 +56,11 @@
     </form>
 </nav>
 
-<div class="container-fluid mb-4" id="weather-cards">
+<div class="container-fluid mt-3 mb-3" id="weather-cards">
     <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -42,7 +69,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -51,7 +78,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -60,7 +87,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -69,7 +96,7 @@
         </div>
         <div class="col-mt-5">
             <div class="card text-center card-weather">
-                <div class="card-header">Featured</div>
+                <div class="card-header">Day</div>
                 <div class="card-body">
                     <h5 class="card-title">Title</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -81,6 +108,7 @@
 
 
 <div id="map" style="width: 100%; height: 700px;"></div>
+<pre id="coordinates" class="coordinates"></pre>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -111,34 +139,31 @@
 
         var map = new mapboxgl.Map(mapOptions);
 
-        var marker = new mapboxgl.Marker(drag)
-            .setLngLat([-98.4861, 29.4260])
-            .addTo(map);
+        map.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl,
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+                center: [-98.4916, 29.4252], // starting position [lng, lat]
+                zoom: 10, // starting zoom
+            })
+        );
 
-        var drag = {
-            draggable: true
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-98.4861, 29.4260])
+            .addTo(map)
+            .setDraggable(true);
+
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML =
+                'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
         }
 
-        // $.get("https://api.openweathermap.org/data/2.5/onecall", {
-        //     APPID: OPEN_WEATHER_APPID,
-        //     lat: 29.423017,
-        //     lon: -98.48527,
-        //     units: "imperial",
-        //     exclude: "minutely,hourly,alerts"
-        // }).done(function (data) {
-        //     console.log(data);
-        // });
-
-
-        let getRequest = $.get("https://api.openweathermap.org/data/2.5/weather", {
-            APPID: OPEN_WEATHER_APPID,
-            lat: 42.3601,
-            lon: -71.0589,
-            units: "imperial",
-            exclude: "minutely,hourly,alerts"
-        }).done(function (data) {
-            console.log(data);
-        });
+        marker.on('dragend', onDragEnd);
+        console.log(onDragEnd);
 
         function updateWeather() {
             getRequest.done(function (data) {
@@ -150,17 +175,36 @@
             });
         }
 
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: 29.423017,
+            lon: -98.48527,
+            units: "imperial",
+            exclude: "minutely,hourly,alerts"
+        }).done(function (data) {
+            console.log(data);
+        });
+
+
         function buildWeather(cards) {
 
-            let postHTML = "";
+            var postHTML = "";
 
             cards.forEach(function (card) {
-                postHTML += "<div class=\"card-body\">";
-                postHTML += "<h5 class=\"card-title\">" + card.data + "</h5>";
+
             });
-            $('#weather-cards').html(postHTML);
         }
-        $('#update-weather').click(updateWeather);
+
+        function fiveDayForecast (city) {
+            $.get("https://api.openweathermap.org/data/2.5/onecall", {
+                APPID: OPEN_WEATHER_APPID,
+                q: "${city}, US",
+                units: "imperial",
+                exclude: "minutely,hourly,alerts"
+            }).done(function (data) {
+                console.log(data);
+            });
+        }
 
     });
 
