@@ -41,10 +41,10 @@ function checkWeatherTwo(isRaining) {
 
 
 
-const instructor = 'Vivian';
-console.log(instructor); // Vivian
-instructor = 'Sophie';
-console.log(instructor); // Uncaught TypeError: Assignment to constant variable.
+// const instructor = 'Vivian';
+// console.log(instructor); // Vivian
+// instructor = 'Sophie';
+// console.log(instructor); // Uncaught TypeError: Assignment to constant variable.
 
 
 
@@ -62,6 +62,7 @@ console.log(instructor); // Uncaught TypeError: Assignment to constant variable.
 // }
 // {
 //     let b = 20;
+//     // console.log(b)
 // }
 //
 // const c = 30;
@@ -82,11 +83,11 @@ console.log(instructor); // Uncaught TypeError: Assignment to constant variable.
 // if (false) {
 //    var x = 2; //Undefined
 // }
-
+//
 // if (false) {
 //     let x = 2; //Uncaught ReferenceError: x is not defined
 // }
-
+//
 // console.log(x);
 
 
@@ -105,7 +106,8 @@ let greeting = "Hello my name is " + firstName + ' ' + lastName + '.';
 
 //TODO: Refactor code from above, using template strings.
 
-
+// let newGreeting = `Hello my name is ${firstName} ${lastName}.`
+// console.log(newGreeting)
 
 
 
@@ -132,9 +134,15 @@ itemsHtml += "</ul>";
 
 //new way
 
+let newItemsHTML = `
+    <ul>
+        <li>${items[0]}</li>
+        <li>${items[1]}</li>
+        <li>${items[2]}</li>
+    </ul>
+`
 
-
-
+// console.log(newItemsHTML);
 
 
 /*==============================================*/
@@ -148,9 +156,14 @@ let program = {
     technology: "HTML, CSS, JS, Java"
 }
 
+let paragraph = `Hello and thanks for looking at ${program.name}!
 
+We are located in ${program.location}. The program is ${program.length}.
 
+You will learn ${program.technology}, and have fun while learning!
+`
 
+// console.log(paragraph)
 
 
 
@@ -175,8 +188,10 @@ let program = {
 /*==============================================*/
 //TODO: Using for of loops, log each instructors name
 
-// const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
+const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+for (let ele of days) {
+    console.log(ele.toUpperCase());
+}
 
 
 
@@ -186,8 +201,10 @@ let program = {
 
 //TODO: Using for of loops, log each instructors name
 
-// const instructors = ["Vivian", "Sophie", "Justin", "Casey", "David"]
-
+const instructors = ["Vivian", "Sophie", "Justin", "Casey", "David"]
+for (let ele of instructors) {
+    console.log(ele);
+}
 
 
 
