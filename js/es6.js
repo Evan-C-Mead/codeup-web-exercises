@@ -67,13 +67,13 @@ const userEmail = user => {
         console.log(user.email);
     }
 };
-console.log(userEmail());
+userEmail();
 const userName = user => {
-    for(const user of users){
+    for(const user of users) {
         console.log(user.name);
 }
 };
-console.log(userName());
+userName();
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
