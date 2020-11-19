@@ -13,7 +13,71 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <div id="main">
+        <input type="text" id="input">
+        <button id="add-to-list">Add to List</button>
 
+        <h4>Favorite Food:</h4>
+        <ul id="favorite-food">
+            <li>Ramen</li>
+            <li>Sushi</li>
+            <li>Curry</li>
+        </ul>
+
+        <h4 id="change-me">Change Me</h4>
+
+        <h4>My Cohort: <span id="my-cohort"></span></h4>
+        <input type="text" id="cohort-name">
+        <button id="change-cohort">Update</button>
+
+        <br>
+        <button id="highlight">Highlight</button>
+    </div>
+</div>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    $(document).ready(function() {
+        "use strict";
+
+        // $('#add-to-list').click(function () {
+        //     var userInput = $('#input').val();
+        //     var newListItem = "<li>"+ userInput +"</li>"
+        //     $('ul').append(newListItem);
+        // });
+
+        $("#add-to-list").on("click", function() {
+            var input = $('#input').val();
+            $("#favorite-food").append('<li>' + input + '</li>');
+        });
+
+        $('#change-me').dblclick(function () {
+            $('#change-me').css('background-color', 'purple');
+        });
+
+        // $('#change-cohort').click(function () {
+        //     var userCohort = $('#cohort-name').val();
+        //     $('#my-cohort').append(userCohort);
+        // });
+
+        $('#change-cohort').on("click", function () {
+            var cohort = $('#cohort-name').val();
+            $('#my-cohort').html(cohort);
+        });
+
+        $('#highlight').click(function () {
+            $('#my-cohort').css('background-color', 'yellow');
+        });
+
+        setTimeout(function () {
+            $('.container').css('background-color', 'pink');
+        }, 3000);
+    });
+
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
