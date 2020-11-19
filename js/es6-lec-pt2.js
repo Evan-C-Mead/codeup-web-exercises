@@ -9,7 +9,7 @@
 // let age = 3;
 // let dogName = "Lexie";
 // let isCute = true;
-//
+
 // //old way
 // let oldDog = {
 // 	breed: breed,
@@ -17,17 +17,24 @@
 // 	dogName: dogName,
 // 	isCute: isCute
 // }
-//
+
 // console.log(oldDog);
-//
 
-
-
-
+// let breed = "Pug";
+// let age = 3;
+// let dogName = "Lexie";
+// let isCute = true;
 
 // //new way
 
+// let newDog = {
+//     breed,
+//     age,
+//     dogName,
+//     isCute
+// }
 
+// console.log(newDog)
 
 
 
@@ -40,15 +47,15 @@
  *          Based on the name of the key
  *****************************************************************/
 
-// var person = {
-// 	name: 'codeup',
-// 	age: 4
-// };
+var personA = {
+	name: 'codeup',
+	age: 4
+};
 
 // old way
-//
-// var name = person.name;
-// var age = person.age;
+
+// var name = personA.name;
+// var age = personA.age;
 //
 //
 // console.log(name); // 'codeup'
@@ -57,9 +64,9 @@
 
 //TODO TOGETHER: REFACTOR the above approach using ES6
 
-
-
-
+// const {name, age} = personA;
+// console.log(name);
+// console.log(age);
 
 
 /*==============================================*/
@@ -85,7 +92,11 @@ const pals = {
 //TODO TOGETHER: REFACTOR the above approach using ES6
 //new way
 
+const {dog, cat, mouse} = pals;
 
+// console.log(dog);
+// console.log(cat);
+// console.log(mouse);
 
 
 
@@ -103,7 +114,10 @@ const theFlash = {
     powers: "Super Speed"
 }
 
+const {alias, powers} = theFlash;
 
+// console.log(alias);
+// console.log(powers);
 
 
 
@@ -131,7 +145,7 @@ let [ cat1, cat2, cat3 ] = cats;
 
 /*==============================================*/
 
-const alphabet = ['A', 'B', 'C', 'D', 'E'];
+// const alphabet = ['A', 'B', 'C', 'D', 'E'];
 
 //old way
 // const a = alphabet[0];
@@ -141,18 +155,31 @@ const alphabet = ['A', 'B', 'C', 'D', 'E'];
 
 //TODO TOGETHER: new way
 
-
+// const [a, , c, d] = alpahbet
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
 
 
 
 //TODO TOGETHER: To skip an element...
 
+// const [a, b, c] = alpahbet
+// console.log(a);
+// console.log(b);
+// console.log(c)
 
 
 
 
 //TODO TOGETHER: To get all elements...Spread operator *BONUS
 
+// const [a, b, c, ... rest] = alpahbet
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(rest);
 
 
 
