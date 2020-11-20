@@ -262,3 +262,12 @@ var hamsters = [
         dateOfBirth: "January 14"
     }
 ];
+
+let furColors = hamsters.map((hamster) => {return hamster.fur});
+console.log(furColors);
+
+let furArray = [];
+hamsters.map(hamster => {
+    hamster.fur.map(color => furArray.push(color));
+});
+console.log(furArray);
