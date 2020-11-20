@@ -45,4 +45,19 @@
     let userEmails = users.map(user => user.email);
     console.log(userEmails);
 
+    let userExperience = users.reduce((yearsExperience, user) => {return yearsExperience + user.yearsOfExperience}, 0);
+    console.log(userExperience);
+    console.log(userExperience / users.length);
+
+    let longestEmail = userEmails.reduce((longestEmail, currentEmail) => {
+        if(currentEmail.length > longestEmail.length) return currentEmail;
+        return longestEmail;
+    }, '');
+    console.log(longestEmail);
+
+    let nameString = users.reduce((currentString, word) => {
+        return `${currentString} ${word.name}, `.toUpperCase();
+    }, 'Your instructors are: ');
+    console.log(nameString);
+
 })();
