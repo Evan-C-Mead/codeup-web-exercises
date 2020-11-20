@@ -58,6 +58,7 @@
     let nameString = users.reduce((currentString, word) => {
         return `${currentString} ${word.name},`.toUpperCase();
     }, 'Your instructors are:');
+    nameString = nameString.substring(0, nameString.length - 1) + '.';
     console.log(nameString);
 
 })();
