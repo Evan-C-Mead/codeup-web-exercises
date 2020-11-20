@@ -42,4 +42,7 @@
     let userObjects = users.filter(user => user.languages.length >= 3);
     console.log(userObjects);
 
+    let userEmails = users.map(user => user.email);
+    console.log(userEmails);
+
 })();
