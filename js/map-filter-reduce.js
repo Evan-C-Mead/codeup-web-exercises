@@ -56,8 +56,8 @@
     console.log(longestEmail);
 
     let nameString = users.reduce((currentString, word) => {
-        return `${currentString} ${word.name}, `.toUpperCase();
-    }, 'Your instructors are: ');
+        return `${currentString} ${word.name},`.toUpperCase();
+    }, 'Your instructors are:');
     console.log(nameString);
 
 })();
