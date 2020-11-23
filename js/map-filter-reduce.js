@@ -71,4 +71,9 @@
     }, []);
     console.log(allLanguages);
 
+    const uniqueLanguages = new Set(allLanguages);
+    console.log(uniqueLanguages);
+    const arrUnique = Array.from(uniqueLanguages);
+    console.log(arrUnique);
+
 })();
