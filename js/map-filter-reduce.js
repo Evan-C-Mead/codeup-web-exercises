@@ -39,6 +39,11 @@
         }
     ];
 
+    const filterUsers = users.filter((user) => {
+        return true
+    });
+    console.log(filterUsers)
+
     let userObjects = users.filter(user => user.languages.length >= 3);
     console.log(userObjects);
 
@@ -60,5 +65,15 @@
     }, 'Your instructors are:');
     nameString = nameString.substring(0, nameString.length - 1) + '.';
     console.log(nameString);
+
+    const allLanguages = users.reduce((accum, curr) => {
+        return accum.concat(curr.languages);
+    }, []);
+    console.log(allLanguages);
+
+    const uniqueLanguages = new Set(allLanguages);
+    console.log(uniqueLanguages);
+    const arrUnique = Array.from(uniqueLanguages);
+    console.log(arrUnique);
 
 })();
