@@ -66,4 +66,9 @@
     nameString = nameString.substring(0, nameString.length - 1) + '.';
     console.log(nameString);
 
+    const allLanguages = users.reduce((accum, curr) => {
+        return accum.concat(curr.languages);
+    }, []);
+    console.log(allLanguages);
+
 })();
