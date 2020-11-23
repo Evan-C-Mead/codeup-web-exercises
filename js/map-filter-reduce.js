@@ -39,6 +39,11 @@
         }
     ];
 
+    const filterUsers = users.filter((user) => {
+        return true
+    });
+    console.log(filterUsers)
+
     let userObjects = users.filter(user => user.languages.length >= 3);
     console.log(userObjects);
 

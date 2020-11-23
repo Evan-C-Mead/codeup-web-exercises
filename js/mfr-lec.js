@@ -263,11 +263,21 @@ var hamsters = [
     }
 ];
 
-let furColors = hamsters.map((hamster) => {return hamster.fur});
-console.log(furColors);
+// let furColors = hamsters.map((hamster) => {return hamster.fur});
+// console.log(furColors);
+//
+// let furArray = [];
+// hamsters.map(hamster => {
+//     hamster.fur.map(color => furArray.push(color));
+// });
+// console.log(furArray);
 
-let furArray = [];
-hamsters.map(hamster => {
-    hamster.fur.map(color => furArray.push(color));
-});
-console.log(furArray);
+let furColors = hamsters.reduce((colorSet,hamster) => {
+    let colors = hamster.fur;
+    for(let color of colors){
+        colorSet.add(color)
+    }
+    return colorSet;
+}, new Set)
+
+console.log(Array.from(furColors));
