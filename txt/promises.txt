@@ -1,0 +1,21 @@
+What are JS promises?
+-A tool for handling asynchronous events in JavaScript. A promise represents an event that might not yet have happened. A promise will be in one of three states:
+
+ Pending: the event has not yet happened.
+ Resolved: the event has happened successfully.
+ Rejected: the event has happened, and an error condition occurred.
+
+Why should I care about JS promises?
+-JS promises are involved with most aspects of API and database actions, downloading large assets, timed actions, read/write files, etc.
+Make writing async code much cleaner.
+They're also used a lot in JS libraries.
+
+How do JS promises relate to what I already know?
+-JS promises relate to the jqXhr object from jQuery AJAX requests.
+
+How do I create and use JS promises?
+-Most commonly, a special value to be handled (Fetch API).
+You can create your own as well.
+
+How will I likely use promises in the future (what is the real world application)?
+-Real world applications will include API calls, database operations, etc.
