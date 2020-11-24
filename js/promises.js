@@ -1,15 +1,24 @@
 (function(){
     "use strict";
 
-    const lastPush = (username) => fetch('https://api.github.com/users/${username}/events', {headers: {'Authorization': 'token ' + gitHubToken}})
-        .then(result => result.json())
-        .then(data => data.filter(event => event.type === "PushEvent"))
-        .then((data) => {
-            console.log(data);
-        }).catch(err => {
-            console.log(err);
-        });
+    function extractDate (events) {
+        for (let event of events) {
+            if (event.type === 'PushEvent') {
+                return new Date(event.created_at).toDateString();
+            }
+        }
+    }
 
+    function lastPush (username) {
+        const url = `https://api.github.com/users/${username}/events`;
+        const options = {headers: {'Authorization': 'token ' + gitHubToken}};
+        return fetch(url, options)
+            .then(res => res.json())
+            .then(extractDate)
+            .catch(console.error);
+    }
+
+    lastPush('Evan-C-Mead').then(console.log);
 
     // fetch('https://swapi.dev/api/people/1').then((response) => {
         //             return response.json();
