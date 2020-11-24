@@ -19,3 +19,32 @@ You can create your own as well.
 
 How will I likely use promises in the future (what is the real world application)?
 -Real world applications will include API calls, database operations, etc.
+
+What are JS promises?
+-A tool for handling asynchronous events in JavaScript. A promise represents an event that might not yet have happened.
+
+What are the three states of a promise?
+-Pending: the event has not yet happened.
+  Resolved: the event has happened successfully.
+  Rejected: the event has happened, and an error condition occurred.
+
+Why are they useful?
+- JS promises are useful in API and database actions, timed actions, read/write files, etc.
+
+How can a JS promise be ‘handled’?
+Promises can be consumed by registering functions using . then and . catch methods. then() is invoked when a promise is either resolved or rejected.
+.then: accepts a callback that will run when the promise is resolved.
+.catch: accepts a callback that will run when the promise is rejected.
+
+What is promise chaining?
+-Promise chaining is meant to replace async/await structure. If you need to wait for something then just wrap it in a promise and return that promise so the next '. then' in the chain will wait for it to be finished.
+
+How do JS promises relate to what we have covered at Codeup previously?
+-JS promises relate to the jqXhr object from jQuery AJAX requests that we have learned already.
+
+What is the difference between Promise.all() and Promise.race()?
+-Promise.all: accepts an array of promises, and resolves when all the individual promises have resolved.
+ Promise.race: accepts an array of promises, and resolves when the first promise resolves
+
+How do promises relate to the Fetch API?
+-The response of a fetch() request is a Stream object, which means that when we call the json() method, a Promise is returned since the reading of the stream will happen asynchronously.
