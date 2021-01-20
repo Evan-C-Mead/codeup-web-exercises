@@ -170,29 +170,26 @@
         }
 
         function buildWeather(cards) {
-            console.log(cards.daily);
             var postHTML = ``;
 
             cards.daily.forEach(function (card) {
 
-                var date = card.dt * 1000;
-                var newDate = new Date(date);
+                var newDate = new Date();
 
                 postHTML += `<div class="container-fluid mt-3 mb-3" id="weather-cards">
                                 <div class="row justify-content-center row-cols-sm-2 row-cols-md-5 row-cols-lg-5 row-cols-xl-5">
                                     <div class="col-mt-5">
                                         <div class="card text-center card-weather">
                                             <div class="card-header">${newDate.toLocaleString()}</div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Day: ${card.temp.day}&#176; F</h5>
-                                                    <h5 class="card-title">Night: ${card.temp.night}&#176; F</h5>
-                                                    <p class="card-text"> Humidity: ${card.humidity}%</p>
-                                                </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Day: ${card.temp.day}&#176; F</h5>
+                                                <h5 class="card-title">Night: ${card.temp.night}&#176; F</h5>
+                                                <p class="card-text"> Humidity: ${card.humidity}%</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            `
+                            </div>`
             });
 
             $('#weather-cards').html(postHTML);
