@@ -2,21 +2,31 @@
   {
     "orderNumber": 1,
     "itemOrdered": "Party Shirt",
-    "orderedBy": "Johnny"
+    "orderedBy": "Johnny",
+    "orderLocation": "Hawaii"
   },
   {
     "orderNumber": 2,
     "itemOrdered": "Silly Shirt",
-    "orderedBy": "Linda"
+    "orderedBy": "Linda",
+    "orderLocation": "Washington"
   },
   {
     "orderNumber": 3,
     "itemOrdered": "Large Hat",
-    "orderedBy": "Ronnie"
+    "orderedBy": "Ronnie",
+    "orderLocation": "California"
   },
   {
     "orderNumber": 4,
     "itemOrdered": "Short Pants",
-    "orderedBy": "Elrond"
+    "orderedBy": "Elrond",
+    "orderLocation": "Rivendell"
+  },
+  {
+    "orderNumber": 5,
+    "itemOrdered": "Vans Kicks",
+    "orderedBy": "Frodo",
+    "orderLocation": "The Shire"
   }
 ]
