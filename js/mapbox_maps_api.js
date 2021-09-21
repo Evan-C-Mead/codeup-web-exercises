@@ -85,7 +85,7 @@ restaurants.forEach(function (restaurant) {
     console.log(restaurant)
     geocode(restaurant.address, mapboxToken).then(function (result) {
         var popup = new mapboxgl.Popup()
-            .setText(restaurant.info.name + "\n" + restaurant.info.cuisineType)
+            .setText(restaurant.info.name + " | " + restaurant.info.cuisineType)
 
         var marker = new mapboxgl.Marker(markerOptions)
             .setLngLat(result)
